@@ -13,7 +13,8 @@ window.onload=function getDaysInMonths(){
     }
 
   }
-  /*
+  var table=[];
+    /*
  for(var i=0;i<monthsLength;i++){
    month+=months[i]+",";
    if(i==3) {break;};
