@@ -10,11 +10,11 @@ var source=[];
 for(var i=0;i<images.length;i++){
   source[i]="<img src='"+images[i]+"' alt='"+alt[i]+"'/>";
 }
-var table="<table>";
+var table="<table class='table-hover'>";
 table+="<tr><th>Movie:</th><th>Monday, 5.8.2019.</th><th>Tuesday, 6.8.2019.</th><th>Wednesday, 7.8.2019.</th><th>Thursday, 8.8.2019.</th><th>Friday, 9.8.2019.</th><th>Saturday, 10.8.2019.</th><th>Sunday, 11.8.2019.</th></tr>";
 for(var k=0;k<movies.length;k++){
-  table+="<tr><td>"+source[k];
-  table+="<p id='fnt' class='info'><h2>"+movies[k]+"</h2></p>";
+  table+="<tr id='"+movies[k]+"' onClick='showdata(this.id)'><td>"+source[k];
+  table+="<p id='fnt'  class='info'><h2>"+movies[k]+"</h2></p>";
   table+="<p id='fnt' class='info'>"+movieType[k]+"</p>";
   table+="<p id='fnt' class='info'>"+duration[k]+"</p></td>";
   table+="<td><p class='info'>"+"12:25"+"</p>";
@@ -60,4 +60,7 @@ return reference;
 }
 function markGreen(){
   return document.getElementById('markMovie').style.backgroundColor="green";
+}
+function showdata(id){
+  return alert("You have chosen:"+id);
 }

@@ -28,6 +28,9 @@ table th,tr,td {
 
     border: 1px solid #ccc;
 }
+table td:hover{
+  background-color: silver;
+}
 table th,td{
 
   text-align: center;
