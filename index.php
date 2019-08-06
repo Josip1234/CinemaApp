@@ -37,8 +37,27 @@
        <div class="col">
     <section>
     <h2>Choose your show:</h2>
+
+    <form action="index.php" method="post">
      <section id="schedule">
      </section>
+     <input id="movie" type="hidden" name="movie">
+      <input id="days" type="hidden" name="days">
+      <input id="time" type="hidden" name="time">
+     <input type="submit" value="Submit">
+   </form>
+   <?php
+   $mov=$_POST["movie"];
+   $dat=$_POST["days"];
+   $tim=$_POST["time"];
+
+   echo $mov;
+   echo $dat;
+   echo $tim;
+
+
+
+    ?>
     </section>
     </div>
     </div>
