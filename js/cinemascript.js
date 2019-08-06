@@ -66,14 +66,14 @@ function markGreen(){
   return document.getElementById('markMovie').style.backgroundColor="green";
 }
 function showdata(id){
-  return document.getElementById('movie').innerHTML=id;
+  return document.getElementById('movie').value=id;
 }
 function chosenDays(day){
 
-  return document.getElementById('days').innerHTML=day;
+  return document.getElementById('days').value=day;
 }
 function chosenTime(time){
-  return document.getElementById('time').innerHTML=time;
+  return document.getElementById('time').value=time;
 }
 function chosenProjections(movie,day,time){
   alert("You have chosen:"+movie+"on"+day+" "+time);

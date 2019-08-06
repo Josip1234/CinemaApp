@@ -12,6 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
+
    <div class="container-fluid">
      <div class="row">
        <div class="col">
@@ -38,26 +39,24 @@
     <section>
     <h2>Choose your show:</h2>
 
-    <form action="index.php" method="post">
+    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
      <section id="schedule">
      </section>
-     <input id="movie" type="hidden" name="movie">
-      <input id="days" type="hidden" name="days">
-      <input id="time" type="hidden" name="time">
-     <input type="submit" value="Submit">
+     <input id="movie" type="hidden" name="movie" value="">
+      <input id="days" type="hidden" name="days" value="">
+      <input id="time" type="hidden" name="time" value="">
+     <input  name="submit" type="submit" value="Submit">
    </form>
-   <?php
-   $mov=$_POST["movie"];
-   $dat=$_POST["days"];
-   $tim=$_POST["time"];
-
-   echo $mov;
-   echo $dat;
-   echo $tim;
+  <?php
+  if($_SERVER['REQUEST_METHOD']=='POST'){
 
 
-
-    ?>
+    $movie=$_POST['movie'];
+    $days=$_POST['days'];
+    $time=$_POST['time'];
+    echo $movie."<br>".$days."<br>".$time;
+  }
+  ?>
     </section>
     </div>
     </div>
