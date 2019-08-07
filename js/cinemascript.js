@@ -7,7 +7,6 @@ window.onload=function makeTable(){
   xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       myObj = JSON.parse(this.responseText);
-      
     }
   };
   xmlhttp.open("GET", "datasource/movies.json", true);
