@@ -1,6 +1,22 @@
+
+
+
+
 window.onload=function getDaysInMonths(){
- var movies=[" Spider-man far from home "," The lion king "," Aladdin "," Angel has fallen "," The nightingale ",
-" Once upon a time in Hollywood "," Fast & Furious: Hobbs & Shaw "," Killerman "];
+
+var movies=[];
+var movie;
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    var myObj = JSON.parse(this.responseText);
+    document.getElementById("test").innerHTML = myObj.movies[0].name;
+  }
+};
+xmlhttp.open("GET", "datasource/movies.json", true);
+xmlhttp.send();
+
+
 var movieType=["Science fiction","Family","Science fiction","Action","Mistery","Comedy","Action","Action"];
 var images=["img/spidermanfaraway.jpg","img/lionking.jpg","img/alladin.jpg","img/angelhasfallen.jpg",
 "img/thenightingale.jpg","img/onceuponatimeinholly.jpg","img/hobbsshaw.jpg","img/killerman.jpg"];
@@ -10,7 +26,7 @@ var source=[];
 var days=["Monday,5.8.2019","Tuesday, 6.8.2019.","Wednesday, 7.8.2019.","Thursday,8.8.2019.","Friday,9.8.2019.","Saturday,10.8.2019.","Sunday, 11.8.2019."];
 var cinema=["A","B","C","D", "E","F","G","H"];
 var time=["12:25","16:40","18:50","13:25","17:40","19:50","15:25","18:40","20:50","15:25","16:40","20:50","12:25","16:40","18:50","12:25","16:40","18:50","12:25","16:40","18:50"];
-for(var i=0;i<images.length;i++){
+for(var i=0;i<source.length;i++){
   source[i]="<img src='"+images[i]+"' alt='"+alt[i]+"'/>";
 }
 var table="<table class='table-hover'>";
@@ -77,4 +93,6 @@ function chosenTime(time){
 }
 function chosenProjections(movie,day,time){
   alert("You have chosen:"+movie+"on"+day+" "+time);
+
+
 }
