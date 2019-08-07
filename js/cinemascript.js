@@ -1,15 +1,22 @@
 
-var xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    myObj = JSON.parse(this.responseText);
-    makeArray(myObj);
-  }
-};
-xmlhttp.open("GET", "datasource/movies.json", true);
-xmlhttp.send();
+
 
 window.onload=function makeTable(){
+
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myObj = JSON.parse(this.responseText);
+      
+    }
+  };
+  xmlhttp.open("GET", "datasource/movies.json", true);
+  xmlhttp.send();
+
+
+
+
+
  var movies=[" Spider-man far from home "," The lion king "," Aladdin "," Angel has fallen "," The nightingale ",
 " Once upon a time in Hollywood "," Fast & Furious: Hobbs & Shaw "," Killerman "];
 
