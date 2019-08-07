@@ -1,26 +1,13 @@
 
-
-
-function returnObject(){
-  var obj;
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      var myObj = JSON.parse(this.responseText);
-
-    }
-  };
-  xmlhttp.open("GET", "datasource/movies.json", true);
-  xmlhttp.send();
-
-}
-
-
-
-
-
-
-
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    myObj = JSON.parse(this.responseText);
+    makeArray(myObj);
+  }
+};
+xmlhttp.open("GET", "datasource/movies.json", true);
+xmlhttp.send();
 
 window.onload=function makeTable(){
  var movies=[" Spider-man far from home "," The lion king "," Aladdin "," Angel has fallen "," The nightingale ",
@@ -40,15 +27,8 @@ for(var i=0;i<images.length;i++){
 }
 var table="<table class='table-hover'>";
 table+="<tr><th>Movie:</th><th id='"+days[0]+"' onClick='chosenDays(this.id)'>"+days[0]+"</th><th id='"+days[1]+"' onClick='chosenDays(this.id)'>"+days[1]+"</th><th id='"+days[2]+"' onClick='chosenDays(this.id)'>"+days[2]+"</th><th id='"+days[3]+"' onClick='chosenDays(this.id)'>"+days[3]+"</th><th id='"+days[4]+"' onClick='chosenDays(this.id)'>"+days[4]+"</th><th id='"+days[5]+"' onClick='chosenDays(this.id)'>"+days[5]+"</th><th id='"+days[6]+"' onClick='chosenDays(this.id)'>"+days[6]+"</th></tr>";
-var xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    var myObj = JSON.parse(this.responseText);
 
-  }
-};
-xmlhttp.open("GET", "datasource/movies.json", true);
-xmlhttp.send();
+
 for(var k=0;k<8;k++){
   table+="<tr id='"+movies[k]+"' onClick='showdata(this.id)'><td>"+source[k];
   table+="<p id='fnt'  class='info'><h2>"+movies[k]+"</h2></p>";
