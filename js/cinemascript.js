@@ -3,14 +3,18 @@
 
 window.onload=function makeTable(){
 
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      myObj = JSON.parse(this.responseText);
+  $.get( "datasource/movies.json", function( data ) {
+
+    var divs = document.getElementsByClassName('tr');
+
+
+    for(var i = 0; i<divs.length;i++) {
+        divs[i].setAttribute("id",data.movies[i].name);
     }
-  };
-  xmlhttp.open("GET", "datasource/movies.json", true);
-  xmlhttp.send();
+
+
+  });
+
 
 
 
@@ -36,7 +40,7 @@ table+="<tr><th>Movie:</th><th id='"+days[0]+"' onClick='chosenDays(this.id)'>"+
 
 
 for(var k=0;k<8;k++){
-  table+="<tr id='"+movies[k]+"' onClick='showdata(this.id)'><td>"+source[k];
+  table+="<tr class='tr' id='' onClick='showdata(this.id)'><td>"+source[k];
   table+="<p id='fnt'  class='info'><h2>"+movies[k]+"</h2></p>";
   table+="<p id='fnt' class='info'>"+movieType[k]+"</p>";
   table+="<p id='fnt' class='info'>"+duration[k]+"</p>";
