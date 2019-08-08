@@ -6,11 +6,14 @@ window.onload=function makeTable(){
   $.get( "datasource/movies.json", function( data ) {
 
     var divs = document.getElementsByClassName('tr');
-
+    var divs2 = document.getElementsByClassName('info1');
 
     for(var i = 0; i<divs.length;i++) {
         divs[i].setAttribute("id",data.movies[i].name);
+        divs2[i].innerHTML=data.movies[i].name;
     }
+
+
 
 
   });
@@ -41,7 +44,7 @@ table+="<tr><th>Movie:</th><th id='"+days[0]+"' onClick='chosenDays(this.id)'>"+
 
 for(var k=0;k<8;k++){
   table+="<tr class='tr' id='' onClick='showdata(this.id)'><td>"+source[k];
-  table+="<p id='fnt'  class='info'><h2>"+movies[k]+"</h2></p>";
+  table+="<p id='fnt'><h2 class='info1'>"+''+"</h2></p>";
   table+="<p id='fnt' class='info'>"+movieType[k]+"</p>";
   table+="<p id='fnt' class='info'>"+duration[k]+"</p>";
   table+="<p id='fnt' class='info'>Cinema:"+cinema[k]+"</p></td>";
