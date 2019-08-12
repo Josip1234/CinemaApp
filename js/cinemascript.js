@@ -10,6 +10,10 @@ window.onload=function makeTable(){
     var divs3 = document.getElementsByClassName('info2');
     var divs4 = document.getElementsByClassName('info3');
     var divs5 = document.getElementsByClassName('imgs');
+    var divs6 = document.getElementsByClassName('day');
+    var divs7 = document.getElementsByClassName('info4');
+
+
 
     for(var i = 0; i<divs.length;i++) {
         divs[i].setAttribute("id",data.movies[i].name);
@@ -18,6 +22,9 @@ window.onload=function makeTable(){
         divs4[i].innerHTML=data.dur[i].duration;
         divs5[i].setAttribute("src",data.images[i].img);
         divs5[i].setAttribute("alt",data.alternative[i].alt);
+        divs6[i].setAttribute("id",data.days[i].date);
+        divs6[i].innerHTML=data.days[i].date;
+        divs7[i].innerHTML=data.cinem[i].hall;
     }
 
 
@@ -33,19 +40,25 @@ window.onload=function makeTable(){
 
 
 
-var cinema=["A","B","C","D", "E","F","G","H"];
+
 var time=["12:25","16:40","18:50","13:25","17:40","19:50","15:25","18:40","20:50","15:25","16:40","20:50","12:25","16:40","18:50","12:25","16:40","18:50","12:25","16:40","18:50"];
 
 var table="<table class='table-hover'>";
-table+="<tr><th>Movie:</th><th id='"+days[0]+"' onClick='chosenDays(this.id)'>"+days[0]+"</th><th id='"+days[1]+"' onClick='chosenDays(this.id)'>"+days[1]+"</th><th id='"+days[2]+"' onClick='chosenDays(this.id)'>"+days[2]+"</th><th id='"+days[3]+"' onClick='chosenDays(this.id)'>"+days[3]+"</th><th id='"+days[4]+"' onClick='chosenDays(this.id)'>"+days[4]+"</th><th id='"+days[5]+"' onClick='chosenDays(this.id)'>"+days[5]+"</th><th id='"+days[6]+"' onClick='chosenDays(this.id)'>"+days[6]+"</th></tr>";
+table+="<tr>";
+table+="<th>Movie:</th>";
+for(var i=0;i<7;i++){
+  table+="<th class='day' id='' onClick='chosenDays(this.id)'>"+''+"</th>";
+}
 
+table+="</tr>";
 
 for(var k=0;k<8;k++){
   table+="<tr class='tr' id='' onClick='showdata(this.id)'><td>"+"<img class='imgs' src='' alt='' />";
   table+="<p id='fnt'><h2 class='info1'>"+''+"</h2></p>";
   table+="<p id='fnt' class='info2'>"+''+"</p>";
   table+="<p id='fnt' class='info3'>"+''+"</p>";
-  table+="<p id='fnt' class='info'>Cinema:"+cinema[k]+"</p></td>";
+  table+="<p id='fnt' class='info4'>"+''+"</p>";
+  table+="</td>";
   table+="<td><p id='"+time[0]+"' class='info' onClick='chosenTime(this.id)'>"+time[0]+"</p>";
   table+="<p id='"+time[1]+"' class='info' onClick='chosenTime(this.id)'>"+time[1]+"</p>";
   table+="<p id='"+time[2]+"' class='info' onClick='chosenTime(this.id)'>"+time[2]+"</p></td>";
