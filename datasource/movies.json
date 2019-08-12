@@ -7,6 +7,49 @@
   {"name":"Once upon a time in Hollywood"},
   {"name":"Fast & Furious: Hobbs & Shaw"},
   {"name":"Killerman"}
+],
+"movie":[
+  {"type":"Science fiction"},
+  {"type":"Family"},
+  {"type":"Science fiction"},
+  {"type":"Action"},
+  {"type":"Mistery"},
+  {"type":"Comedy"},
+  {"type":"Action"},
+  {"type":"Action"}
+],
+"images":[
+  {"img":"img/spidermanfaraway.jpg"},
+  {"img":"img/lionking.jpg"},
+  {"img":"img/alladin.jpg"},
+  {"img":"img/angelhasfallen.jpg"},
+  {"img":"img/thenightingale.jpg"},
+  {"img":"img/onceuponatimeinholly.jpg"},
+  {"img":"img/hobbsshaw.jpg"},
+  {"img":"img/killerman.jpg"}
+],
+"alternative":[
+  {"alt":"spiderman"},
+  {"alt":"lionking"},
+  {"alt":"alladin"},
+  {"alt":"angelhasfallen"},
+  {"alt":"nightingale"},
+  {"alt":"hollywood"},
+  {"alt":"hobbsshaw"},
+  {"alt":"killerman"}
+
+],
+"dur":[
+  {"duration":"2h 9min"},
+  {"duration":"1h 58min"},
+  {"duration":"2h 8min"},
+  {"duration":"2h 8min"},
+  {"duration":"2h 16min"},
+  {"duration":"2h 41min"},
+  {"duration":"2h 15min"},
+  {"duration":"2h 0min"}
 ]
+
+
 
 }
