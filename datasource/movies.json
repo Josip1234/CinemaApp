@@ -48,7 +48,18 @@
   {"duration":"2h 41min"},
   {"duration":"2h 15min"},
   {"duration":"2h 0min"}
+],
+"days":[
+  {"date":"Monday,12.8.2019."},
+  {"date":"Tuesday, 13.8.2019."},
+  {"date":"Wednesday, 14.8.2019."},
+  {"date":"Thursday,15.8.2019."},
+  {"date":"Friday,16.8.2019."},
+  {"date":"Saturday,17.8.2019."},
+  {"date":"Sunday, 18.8.2019."}
+
 ]
+
 
 
 
