@@ -14,6 +14,15 @@ window.onload=function makeTable(){
     var divs7 = document.getElementsByClassName('info4');
 
 
+    var index=0;
+    while(index<divs6.length){
+      divs6[index].setAttribute("id",data.days[index].date);
+      divs6[index].innerHTML=data.days[index].date;
+      index++;
+    }
+
+
+
 
     for(var i = 0; i<divs.length;i++) {
         divs[i].setAttribute("id",data.movies[i].name);
@@ -22,9 +31,10 @@ window.onload=function makeTable(){
         divs4[i].innerHTML=data.dur[i].duration;
         divs5[i].setAttribute("src",data.images[i].img);
         divs5[i].setAttribute("alt",data.alternative[i].alt);
-        divs6[i].setAttribute("id",data.days[i].date);
-        divs6[i].innerHTML=data.days[i].date;
         divs7[i].innerHTML=data.cinem[i].hall;
+
+
+
     }
 
 
@@ -46,7 +56,7 @@ var time=["12:25","16:40","18:50","13:25","17:40","19:50","15:25","18:40","20:50
 var table="<table class='table-hover'>";
 table+="<tr>";
 table+="<th>Movie:</th>";
-for(var i=0;i<7;i++){
+for(var p=0;p<7;p++){
   table+="<th class='day' id='' onClick='chosenDays(this.id)'>"+''+"</th>";
 }
 

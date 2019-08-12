@@ -49,7 +49,16 @@
   {"duration":"2h 15min"},
   {"duration":"2h 0min"}
 ],
-
+"cinem":[
+  {"hall":"Cinema:A"},
+  {"hall":"Cinema:B"},
+  {"hall":"Cinema:C"},
+  {"hall":"Cinema:D"},
+  {"hall":"Cinema:E"},
+  {"hall":"Cinema:F"},
+  {"hall":"Cinema:G"},
+  {"hall":"Cinema:H"}
+],
 "days":[
   {"date":"Monday,12.8.2019."},
   {"date":"Tuesday, 13.8.2019."},
@@ -59,18 +68,9 @@
   {"date":"Saturday,17.8.2019."},
   {"date":"Sunday, 18.8.2019."}
 
-],
-
-"cinem":[
-  {"hall":"A"},
-  {"hall":"B"},
-  {"hall":"C"},
-  {"hall":"D"},
-  {"hall":"E"},
-  {"hall":"F"},
-  {"hall":"G"},
-  {"hall":"H"}
 ]
+
+
 
 
 }
