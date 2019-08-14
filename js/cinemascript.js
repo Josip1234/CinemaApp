@@ -9,7 +9,10 @@ function countTotal(){
   }else{
 
     var result=document.getElementById('totalprice').innerHTML=(getTicketAmount*price).toFixed(2);
-
+    var ticketcategory=document.getElementById('ticketcategory').value=getValue;
+    var ticketamount=document.getElementById('ticketamount').value=getTicketAmount;
+    var price=document.getElementById('price').value=price;
+    var total=document.getElementById('total').value=result;
   }
 
 
