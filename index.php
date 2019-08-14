@@ -27,6 +27,7 @@
      <input id="movie" type="hidden" name="movie" value="">
       <input id="days" type="hidden" name="days" value="">
       <input id="time" type="hidden" name="time" value="">
+
      <input  name="submit" type="submit" value="Submit">
 
    </form>
@@ -35,12 +36,32 @@
   if($_SERVER['REQUEST_METHOD']=='POST'){
 
 
-    $movie=$_POST['movie'];
-    $days=$_POST['days'];
-    $time=$_POST['time'];
-    $array=array('movie'=>$movie,'days'=>$days,'time'=>$time);
-    $json_data = json_encode($array);
-    file_put_contents('datasource/selectedMovie.json', $json_data);
+    $movie=$_POST['movie'] ?? '';
+    $days=$_POST['days'] ?? '';
+    $time=$_POST['time'] ?? '';
+    if(($movie=='' || $days=='') || $time==''){
+
+    }else{
+      $array=array('movie'=>$movie,'days'=>$days,'time'=>$time);
+      $json_data = json_encode($array);
+      file_put_contents('datasource/selectedMovie.json', $json_data);
+    }
+
+    $ticketcategory=$_POST['ticketcategory'] ?? '';
+    $ticketamount=$_POST['ticketamount'] ?? '';
+    $price=$_POST['price'] ?? '';
+    $discount=$_POST['discount'] ?? '';
+    $total=$_POST['total'] ?? '';
+
+     if((($ticketcategory=='' || $ticketamount=='')||($price==''||$discount==''))||$total==''){
+
+     }else{
+       $array=array('ticketcategory'=>$ticketcategory,'ticketamount'=>$ticketamount,'price'=>$price,'discount'=>$discount,'total'=>$total);
+       $json_data = json_encode($array);
+       file_put_contents('datasource/ticketDetails.json', $json_data);
+     }
+
+
   }
   ?>
     </section>
@@ -51,6 +72,19 @@
         <section id="section2">
 
            <section id="sittingplan">
+           </section>
+           <section id="form2">
+             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
+
+              <input id="ticketcategory" type="hidden" name="ticketcategory" value="">
+               <input id="ticketamount" type="hidden" name="ticketamount" value="">
+               <input id="price" type="hidden" name="price" value="">
+              <input id="total" type="hidden" name="total" value="">
+              <input id="discount" type="hidden" name="discount" value="">
+              <input  name="submit" type="submit" value="Submit">
+
+            </form>
+
            </section>
         </seection>
       </div>

@@ -1,4 +1,5 @@
 function countTotal(){
+
   var getValue=document.getElementById("priceCategory").value;
   var getTicketAmount=document.getElementById("ticketAmount").value;
   var price=document.getElementById("ticketprice").innerHTML;
@@ -6,23 +7,9 @@ function countTotal(){
   if((getValue==''||(getTicketAmount=='' || getTicketAmount==0))||(price==''||price==0)){
 
   }else{
-   $.get( "datasource/ticket.json", function( ticket ) {
-    var percentage="";
-     for (i in ticket.tickets) {
-       if(getValue.trim()==ticket.tickets[i].discount.trim()){
-         alert(true);
-       }
-           percentage+=ticket.tickets[i].discount;
-        }
 
-
-               alert(parseInt(percentage));
-
-
-
-
-     });
     var result=document.getElementById('totalprice').innerHTML=(getTicketAmount*price).toFixed(2);
+
   }
 
 
@@ -47,7 +34,7 @@ function chooseTicketOptions(){
   table+="<th>Price category:</th>";
   table+="<th>Ticket amount:</th>";
   table+="<th>Price:</th>";
-  table+="<th>Total:</th>";
+  table+="<th>Total with discount:</th>";
   table+="</tr>";
   table+="<tr>";
   table+="<td class='nh'><div class='form-group'><select class='form-control' id='priceCategory' name='pc' onchange='countTotal()'>";
@@ -71,7 +58,7 @@ function chooseTicketOptions(){
 
 window.onload=function makeTable(){
   chooseTicketOptions();
- hideSecondSection();
+  hideSecondSection();
 
   $.get( "datasource/movies.json", function( data ) {
 
