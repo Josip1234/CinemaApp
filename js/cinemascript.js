@@ -1,8 +1,20 @@
 
-
+function chooseTicketOptions(){
+  var table="<h2>Ticket options:</h2>";
+  table+="<table class='table-hover'>";
+  table+="<tr>";
+  table+="<th>Price category:</th>";
+  table+="<th>Ticket amount:</th>";
+  table+="<th>Price:</th>";
+  table+="<th>Total:</th>";
+  table+="</tr>";
+  table+="</table>";
+  document.getElementById('sittingplan').innerHTML=table;
+}
 
 window.onload=function makeTable(){
-
+  chooseTicketOptions();
+ hideSecondSection();
   $.get( "datasource/movies.json", function( data ) {
 
     var divs = document.getElementsByClassName('tr');
@@ -57,8 +69,6 @@ window.onload=function makeTable(){
 
 
 
-
-var time=["12:25","16:40","18:50","13:25","17:40","19:50","15:25","18:40","20:50","15:25","16:40","20:50","12:25","16:40","18:50","12:25","16:40","18:50","12:25","16:40","18:50"];
 
 var table="<table class='table-hover'>";
 table+="<tr>";
@@ -131,10 +141,15 @@ function chosenProjections(movie,day,time){
 }
 function showSecondSection(){
 hideFirstSection();
+document.getElementById('section2').style.display="initial";
+}
+function hideSecondSection(){
+  document.getElementById('section2').style.display="none";
 }
 function hideFirstSection(){
   return document.getElementById('section1').style.display="none";
 }
 function showFirstSection(){
+  hideSecondSection();
   return document.getElementById('section1').style.display="initial";
 }

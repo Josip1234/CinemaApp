@@ -1,12 +1,12 @@
 {"movies":[
-  {"name":"Spider-man far from home" },
-  {"name":"The lion king"},
-  {"name":"Aladdin"},
-  {"name":"Angel has fallen"},
-  {"name":" The nightingale"},
-  {"name":"Once upon a time in Hollywood"},
-  {"name":"Fast & Furious: Hobbs & Shaw"},
-  {"name":"Killerman"}
+  {"name":"Spider-man far from home", "sold":"20", "available":"40"},
+  {"name":"The lion king","sold":"10", "available":"50"},
+  {"name":"Aladdin", "sold":"50", "available":"10"},
+  {"name":"Angel has fallen", "sold":"5", "available":"55"},
+  {"name":" The nightingale", "sold":"20", "available":"40"},
+  {"name":"Once upon a time in Hollywood", "sold":"0", "available":"60"},
+  {"name":"Fast & Furious: Hobbs & Shaw", "sold":"30", "available":"30"},
+  {"name":"Killerman", "sold":"12", "available":"48"}
 ],
 "movie":[
   {"type":"Science fiction"},

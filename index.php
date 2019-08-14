@@ -23,10 +23,7 @@
         <a class="nav-link" href="#" onclick="showFirstSection()">Available shows </a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="#" onclick="showSecondSection()">Seats </a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="#">Tickets </a>
+        <a class="nav-link" href="#" onclick="showSecondSection()">Tickets </a>
         </li>
         <li class="nav-item">
         <a class="nav-link" href="#">Billing</a>
@@ -60,6 +57,15 @@
   ?>
     </section>
     </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <section id="section2">
+          
+           <section id="sittingplan">
+           </section>
+        </seection>
+      </div>
     </div>
    </div>
   </body>
