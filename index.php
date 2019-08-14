@@ -15,23 +15,7 @@
 
 
    <div class="container-fluid">
-     <div class="row">
-       <div class="col">
-     <nav>
-      <ul class="nav">
-        <li class="nav-item">
-        <a class="nav-link" href="#" onclick="showFirstSection()">Available shows </a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="#" onclick="showSecondSection()">Tickets </a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="#">Billing</a>
-        </li>
-        </ul>
-     </nav>
-     </div>
-     </div>
+
      <div class="row">
        <div class="col">
     <section id="section1">
@@ -44,7 +28,9 @@
       <input id="days" type="hidden" name="days" value="">
       <input id="time" type="hidden" name="time" value="">
      <input  name="submit" type="submit" value="Submit">
+
    </form>
+     <button type="button" class="btn btn-primary" onclick="showSecondSection()">Tickets</button>
   <?php
   if($_SERVER['REQUEST_METHOD']=='POST'){
 
@@ -52,7 +38,9 @@
     $movie=$_POST['movie'];
     $days=$_POST['days'];
     $time=$_POST['time'];
-    echo $movie."<br>".$days."<br>".$time;
+    $array=array('movie'=>$movie,'days'=>$days,'time'=>$time);
+    $json_data = json_encode($array);
+    file_put_contents('datasource/selectedMovie.json', $json_data);
   }
   ?>
     </section>
@@ -61,7 +49,7 @@
     <div class="row">
       <div class="col">
         <section id="section2">
-          
+
            <section id="sittingplan">
            </section>
         </seection>

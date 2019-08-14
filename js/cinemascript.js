@@ -1,20 +1,28 @@
 function getPriceCategory(){
   var getValue=document.getElementById("priceCategory").value;
-  alert(getValue);
+  if(getValue==''){
+
+  }else{
+    alert(getValue);
+  }
+
 }
 
 function chooseTicketOptions(){
+
   $.get( "datasource/ticket.json", function( ticket ) {
       var getPriceCategory=document.getElementsByClassName('ticket');
+
 
        for(var num=0;num<getPriceCategory.length;num++){
          getPriceCategory[num].value=ticket.tickets[num].option;
          getPriceCategory[num].innerHTML=ticket.tickets[num].option;
+
        }
 
   });
   var table="<h2>Ticket options:</h2>";
-  table+="<table class='table-hover'>";
+  table+="<table class='table'>";
   table+="<tr>";
   table+="<th>Price category:</th>";
   table+="<th>Ticket amount:</th>";
@@ -22,17 +30,19 @@ function chooseTicketOptions(){
   table+="<th>Total:</th>";
   table+="</tr>";
   table+="<tr>";
-  table+="<td><select id='priceCategory' name='pc' onchange='getPriceCategory()'>";
+  table+="<td class='nh'><div class='form-group'><select class='form-control' id='priceCategory' name='pc' onchange='getPriceCategory()'>";
   table+="<option value=''></option>";
   for(var i=0;i<5;i++){
     table+="<option class='ticket'></option>";
   }
 
-  table+="</select></td>";
+  table+="</select></div></td>";
+  table+="<td class='nh'><div class='form-group'><input class='form-control' id='ticketAmount' type='number' max='' min='1'></div></td>";
   table+="</tr>";
   table+="</table>";
   document.getElementById('sittingplan').innerHTML=table;
 }
+
 
 window.onload=function makeTable(){
   chooseTicketOptions();
@@ -47,6 +57,11 @@ window.onload=function makeTable(){
     var divs6 = document.getElementsByClassName('day');
     var divs7 = document.getElementsByClassName('info4');
     var divs8=document.getElementsByClassName('time');
+
+    $.get("datasource/selectedMovie.json",function(selected){
+      var tickets=document.getElementById('ticketAmount');
+
+
 
 
 
@@ -69,6 +84,12 @@ window.onload=function makeTable(){
         divs5[i].setAttribute("alt",data.alternative[i].alt);
         divs7[i].innerHTML=data.cinem[i].hall;
 
+        if(selected.movie==data.movies[i].name){
+          tickets.setAttribute("max",data.movies[i].available);
+
+        }
+
+
 
 
 
@@ -80,7 +101,7 @@ window.onload=function makeTable(){
 
 
 
-
+});
   });
 
 
@@ -162,6 +183,7 @@ function chosenProjections(movie,day,time){
   alert("You have chosen:"+movie+"on"+day+" "+time);
 }
 function showSecondSection(){
+
 hideFirstSection();
 document.getElementById('section2').style.display="initial";
 }

@@ -37,3 +37,6 @@ table th,td{
   text-align: center;
   vertical-align: middle;
 }
+.nh:hover {
+     background-color: white !important;
+ }
