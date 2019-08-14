@@ -1,13 +1,30 @@
-function getPriceCategory(){
+function countTotal(){
   var getValue=document.getElementById("priceCategory").value;
   var getTicketAmount=document.getElementById("ticketAmount").value;
   var price=document.getElementById("ticketprice").innerHTML;
+
   if((getValue==''||(getTicketAmount=='' || getTicketAmount==0))||(price==''||price==0)){
 
   }else{
-    var result=document.getElementById('totalprice').innerHTML=getTicketAmount*price;
+   $.get( "datasource/ticket.json", function( ticket ) {
+    var percentage="";
+     for (i in ticket.tickets) {
+       if(getValue.trim()==ticket.tickets[i].discount.trim()){
+         alert(true);
+       }
+           percentage+=ticket.tickets[i].discount;
+        }
+
+
+               alert(parseInt(percentage));
+
+
+
+
+     });
+    var result=document.getElementById('totalprice').innerHTML=(getTicketAmount*price).toFixed(2);
   }
-  return result;
+
 
 }
 
@@ -33,14 +50,14 @@ function chooseTicketOptions(){
   table+="<th>Total:</th>";
   table+="</tr>";
   table+="<tr>";
-  table+="<td class='nh'><div class='form-group'><select class='form-control' id='priceCategory' name='pc' onchange='getPriceCategory()'>";
+  table+="<td class='nh'><div class='form-group'><select class='form-control' id='priceCategory' name='pc' onchange='countTotal()'>";
   table+="<option value=''></option>";
   for(var i=0;i<5;i++){
     table+="<option class='ticket'></option>";
   }
 
   table+="</select></div></td>";
-  table+="<td class='nh'><div class='form-group'><input class='form-control' id='ticketAmount' type='number' max='' min='1' onchange='getPriceCategory()'></div></td>";
+  table+="<td class='nh'><div class='form-group'><input class='form-control' id='ticketAmount' type='number' max='' min='1' onchange='countTotal()'></div></td>";
   table+="<td class='nh'><p id='ticketprice'>"+''+"</p>";
   table+="</td>";
   table+="<td class='nh'><p id='totalprice'>"+''+"</p>";
