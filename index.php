@@ -13,20 +13,20 @@
   </head>
   <body>
 
-    
+
    <div class="container-fluid">
      <div class="row">
        <div class="col">
      <nav>
       <ul class="nav">
         <li class="nav-item">
-        <a class="nav-link" href="#">Available shows </a>
+        <a class="nav-link" href="#" onclick="showFirstSection()">Available shows </a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#" onclick="showSecondSection()">Seats </a>
         </li>
         <li class="nav-item">
         <a class="nav-link" href="#">Tickets </a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link" href="#">Seats </a>
         </li>
         <li class="nav-item">
         <a class="nav-link" href="#">Billing</a>
@@ -37,7 +37,7 @@
      </div>
      <div class="row">
        <div class="col">
-    <section>
+    <section id="section1">
     <h2>Choose your show:</h2>
 
     <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">

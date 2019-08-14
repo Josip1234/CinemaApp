@@ -129,3 +129,12 @@ function chosenTime(time){
 function chosenProjections(movie,day,time){
   alert("You have chosen:"+movie+"on"+day+" "+time);
 }
+function showSecondSection(){
+hideFirstSection();
+}
+function hideFirstSection(){
+  return document.getElementById('section1').style.display="none";
+}
+function showFirstSection(){
+  return document.getElementById('section1').style.display="initial";
+}
