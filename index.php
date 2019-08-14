@@ -47,10 +47,24 @@
       file_put_contents('datasource/selectedMovie.json', $json_data);
     }
 
+
     $ticketcategory=$_POST['ticketcategory'] ?? '';
     $ticketamount=$_POST['ticketamount'] ?? '';
     $price=$_POST['price'] ?? '';
-    $discount=$_POST['discount'] ?? '';
+
+
+    $discount='';
+    if($ticketcategory=="Children 5-10 years"){
+         $discount=75/100;
+    }else if($ticketcategory=="Children 10-14 years"){
+         $discount=65/100;
+    }else if($ticketcategory=="Young adult 14-18 years"){
+        $discount=56/100;
+}else if($ticketcategory=="Regular student 19-25 years"){
+       $discount=50/100;
+}else if($ticketcategory=="Adult"){
+     $discount=0/100;
+}
     $total=$_POST['total'] ?? '';
 
      if((($ticketcategory=='' || $ticketamount=='')||($price==''||$discount==''))||$total==''){
@@ -80,7 +94,7 @@
                <input id="ticketamount" type="hidden" name="ticketamount" value="">
                <input id="price" type="hidden" name="price" value="">
               <input id="total" type="hidden" name="total" value="">
-              <input id="discount" type="hidden" name="discount" value="">
+
               <input  name="submit" type="submit" value="Submit">
 
             </form>
