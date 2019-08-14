@@ -1,0 +1,9 @@
+{
+  "ticket":[
+    {"option":"Children 5-10 years", "discount":"75%"},
+    {"option":"Children 10-14 years", "discount":"60%"},
+    {"option":"Young adult 14-18 years", "discount":"55%"},
+    {"option":"Regular student 19-25 years", "discount":"50%"},
+    {"option":"Adult", "discount":"0%"}
+  ]
+}
