@@ -1,10 +1,13 @@
 function getPriceCategory(){
   var getValue=document.getElementById("priceCategory").value;
-  if(getValue==''){
+  var getTicketAmount=document.getElementById("ticketAmount").value;
+  var price=document.getElementById("ticketprice").innerHTML;
+  if((getValue==''||(getTicketAmount=='' || getTicketAmount==0))||(price==''||price==0)){
 
   }else{
-    alert(getValue);
+    var result=document.getElementById('totalprice').innerHTML=getTicketAmount*price;
   }
+  return result;
 
 }
 
@@ -37,16 +40,22 @@ function chooseTicketOptions(){
   }
 
   table+="</select></div></td>";
-  table+="<td class='nh'><div class='form-group'><input class='form-control' id='ticketAmount' type='number' max='' min='1'></div></td>";
+  table+="<td class='nh'><div class='form-group'><input class='form-control' id='ticketAmount' type='number' max='' min='1' onchange='getPriceCategory()'></div></td>";
+  table+="<td class='nh'><p id='ticketprice'>"+''+"</p>";
+  table+="</td>";
+  table+="<td class='nh'><p id='totalprice'>"+''+"</p>";
+  table+="</td>";
   table+="</tr>";
   table+="</table>";
   document.getElementById('sittingplan').innerHTML=table;
+
 }
 
 
 window.onload=function makeTable(){
   chooseTicketOptions();
  hideSecondSection();
+
   $.get( "datasource/movies.json", function( data ) {
 
     var divs = document.getElementsByClassName('tr');
@@ -57,6 +66,7 @@ window.onload=function makeTable(){
     var divs6 = document.getElementsByClassName('day');
     var divs7 = document.getElementsByClassName('info4');
     var divs8=document.getElementsByClassName('time');
+    var ticketprice=document.getElementById('ticketprice');
 
     $.get("datasource/selectedMovie.json",function(selected){
       var tickets=document.getElementById('ticketAmount');
@@ -86,6 +96,7 @@ window.onload=function makeTable(){
 
         if(selected.movie==data.movies[i].name){
           tickets.setAttribute("max",data.movies[i].available);
+          ticketprice.innerHTML=data.price[i].fullprice;
 
         }
 

@@ -5,6 +5,6 @@
     {"option":"Young adult 14-18 years", "discount":"55%"},
     {"option":"Regular student 19-25 years", "discount":"50%"},
     {"option":"Adult", "discount":"0%"}
-  ],
-  
+  ]
+
 }
