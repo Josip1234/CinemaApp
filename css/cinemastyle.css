@@ -18,7 +18,14 @@ img{
   float: left;
 
 }
-
+img #green{
+  width: 1%;
+  height: auto;
+}
+img #red{
+  width: 1%;
+  height: auto;
+}
 
 table {
     table-layout: auto;

@@ -1,3 +1,59 @@
+
+function getSeat(number){
+  if(number<=5){
+    var a=document.getElementById('a').innerHTML;
+    var th=document.getElementById('x').innerHTML;
+    alert("Seat number: "+number+" is at place:"+a+" "+th);
+  }else if(number>5 && number<=10){
+    var a=document.getElementById('a').innerHTML;
+    var th=document.getElementById('y').innerHTML;
+    alert("Seat number: "+number+" is at place:"+a+" "+th);
+  }else if(number>10 && number<=15){
+    var a=document.getElementById('a').innerHTML;
+    var th=document.getElementById('u').innerHTML;
+    alert("Seat number: "+number+" is at place:"+a+" "+th);
+  }else if(number>15 && number<=20){
+    var a=document.getElementById('a').innerHTML;
+    var th=document.getElementById('z').innerHTML;
+    alert("Seat number: "+number+" is at place:"+a+" "+th);
+  }else if(number>20 && number<=25){
+    var b=document.getElementById('b').innerHTML;
+    var th=document.getElementById('x').innerHTML;
+    alert("Seat number: "+number+" is at place:"+b+" "+th);
+  }else if(number>25 && number<=30){
+    var b=document.getElementById('b').innerHTML;
+    var th=document.getElementById('y').innerHTML;
+    alert("Seat number: "+number+" is at place:"+b+" "+th);
+  }else if(number>30 && number<=35){
+    var b=document.getElementById('b').innerHTML;
+    var th=document.getElementById('u').innerHTML;
+    alert("Seat number: "+number+" is at place:"+b+" "+th);
+  }else if(number>35 && number<=40){
+    var b=document.getElementById('b').innerHTML;
+    var th=document.getElementById('z').innerHTML;
+    alert("Seat number: "+number+" is at place:"+b+" "+th);
+  }else if(number>40 && number<=45){
+    var c=document.getElementById('c').innerHTML;
+    var th=document.getElementById('x').innerHTML;
+    alert("Seat number: "+number+" is at place:"+c+" "+th);
+  }else if(number>45 && number<=50){
+    var c=document.getElementById('c').innerHTML;
+    var th=document.getElementById('y').innerHTML;
+    alert("Seat number: "+number+" is at place:"+c+" "+th);
+  }else if(number>50 && number<=55){
+    var c=document.getElementById('c').innerHTML;
+    var th=document.getElementById('u').innerHTML;
+    alert("Seat number: "+number+" is at place:"+c+" "+th);
+  }  else if(number>55 && number<=60){
+    var c=document.getElementById('c').innerHTML;
+    var th=document.getElementById('z').innerHTML;
+    alert("Seat number: "+number+" is at place:"+c+" "+th);
+  }
+
+
+
+}
+
 function createSeats(){
 
   var table="<h2>Sitting plan</h2>";
@@ -13,68 +69,68 @@ function createSeats(){
   table+="<td class='nh' id='a'>"+"Sector A"+"</td>";
   table+="<td class='nh'>";
   for(var num=1;num<6;num++){
-    table+="<p id='"+num+"'>"+"<img id='green' src='img/greenchairicon.png' alt='green'>"+"</p>";
+    table+="<p onClick='getSeat(this.id)' id='"+num+"'>"+"<img id='green' src='img/greenchairicon.png' alt='green'>"+"</p>";
   }
   table+="</td>";
   table+="<td class='nh'>";
   for(var num=6;num<11;num++){
-    table+="<p id='"+num+"'>"+"<img id='green' src='img/greenchairicon.png' alt='green'>"+"</p>";
+    table+="<p onClick='getSeat(this.id)' id='"+num+"'>"+"<img id='green' src='img/greenchairicon.png' alt='green'>"+"</p>";
   }
   table+="</td>";
   table+="<td class='nh'>";
-  for(var num=11;num<17;num++){
-    table+="<p id='"+num+"'>"+"<img id='green' src='img/greenchairicon.png' alt='green'>"+"</p>";
+  for(var num=11;num<16;num++){
+    table+="<p onClick='getSeat(this.id)' id='"+num+"'>"+"<img id='green' src='img/greenchairicon.png' alt='green'>"+"</p>";
   }
   table+="</td>";
   table+="<td class='nh'>";
-  for(var num=17;num<22;num++){
-    table+="<p id='"+num+"'>"+"<img id='green' src='img/greenchairicon.png' alt='green'>"+"</p>";
+  for(var num=16;num<21;num++){
+    table+="<p onClick='getSeat(this.id)' id='"+num+"'>"+"<img id='green' src='img/greenchairicon.png' alt='green'>"+"</p>";
   }
   table+="</td>";
   table+="</tr>";
   table+="<tr>";
   table+="<td class='nh' id='b'>"+"Sector B"+"</td>";
   table+="<td class='nh'>";
-  for(var num=22;num<27;num++){
-    table+="<p id='"+num+"'>"+num+"</p>";
+  for(var num=21;num<26;num++){
+    table+="<p onClick='getSeat(this.id)' id='"+num+"'>"+"<img id='green' src='img/greenchairicon.png' alt='green'>"+"</p>";
   }
   table+="</td>";
   table+="<td class='nh'>";
-  for(var num=27;num<32;num++){
-    table+="<p id='"+num+"'>"+num+"</p>";
+  for(var num=26;num<31;num++){
+    table+="<p onClick='getSeat(this.id)' id='"+num+"'>"+"<img id='green' src='img/greenchairicon.png' alt='green'>"+"</p>";
   }
   table+="</td>";
   table+="<td class='nh'>";
-  for(var num=32;num<37;num++){
-    table+="<p id='"+num+"'>"+num+"</p>";
+  for(var num=31;num<36;num++){
+    table+="<p onClick='getSeat(this.id)' id='"+num+"'>"+"<img id='red' src='img/redchairicon.png' alt='red'>"+"</p>";
   }
   table+="</td>";
   table+="<td class='nh'>";
-  for(var num=37;num<42;num++){
-    table+="<p id='"+num+"'>"+num+"</p>";
+  for(var num=36;num<41;num++){
+    table+="<p onClick='getSeat(this.id)' id='"+num+"'>"+"<img id='red' src='img/redchairicon.png' alt='red'>"+"</p>";
   }
   table+="</td>";
   table+="</tr>";
   table+="<tr>";
   table+="<td class='nh' id='c'>"+"Sector C"+"</td>";
   table+="<td class='nh'>";
-  for(var num=42;num<47;num++){
-    table+="<p id='"+num+"'>"+num+"</p>";
+  for(var num=41;num<46;num++){
+    table+="<p onClick='getSeat(this.id)' id='"+num+"'>"+"<img id='red' src='img/redchairicon.png' alt='red'>"+"</p>";
   }
   table+="</td>";
   table+="<td class='nh'>";
-  for(var num=47;num<52;num++){
-    table+="<p id='"+num+"'>"+num+"</p>";
+  for(var num=46;num<51;num++){
+    table+="<p onClick='getSeat(this.id)' id='"+num+"'>"+"<img id='red' src='img/redchairicon.png' alt='red'>"+"</p>";
   }
   table+="</td>";
   table+="<td class='nh'>";
-  for(var num=52;num<57;num++){
-    table+="<p id='"+num+"'>"+num+"</p>";
+  for(var num=51;num<56;num++){
+    table+="<p onClick='getSeat(this.id)' id='"+num+"'>"+"<img id='red' src='img/redchairicon.png' alt='red'>"+"</p>";
   }
   table+="</td>";
   table+="<td class='nh'>";
-  for(var num=57;num<61;num++){
-    table+="<p id='"+num+"'>"+num+"</p>";
+  for(var num=56;num<61;num++){
+    table+="<p onClick='getSeat(this.id)' id='"+num+"'>"+"<img id='red' src='img/redchairicon.png' alt='red'>"+"</p>";
   }
   table+="</td>";
 
@@ -193,7 +249,7 @@ window.onload=function makeTable(){
         divs5[i].setAttribute("src",data.images[i].img);
         divs5[i].setAttribute("alt",data.alternative[i].alt);
         divs7[i].innerHTML=data.cinem[i].hall;
-        divs9[i].innerHTML=data.movies[i].sold;
+        divs9[i].innerHTML=data.movies[i].available;
         if(selected.movie==data.movies[i].name){
           tickets.setAttribute("max",data.movies[i].available);
           ticketprice.innerHTML=data.price[i].fullprice;
