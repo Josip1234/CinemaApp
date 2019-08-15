@@ -22,7 +22,7 @@ function createSeats(){
   }
   table+="</td>";
   table+="<td class='nh'>";
-  for(var num=11;num<16;num++){
+  for(var num=11;num<17;num++){
     table+="<p id='"+num+"'>"+"<img id='green' src='img/greenchairicon.png' alt='green'>"+"</p>";
   }
   table+="</td>";
@@ -125,7 +125,7 @@ function chooseTicketOptions(){
   table+="<table class='table'>";
   table+="<tr>";
   table+="<th>Price category:</th>";
-  table+="<th>Ticket amount out of:<p id='sum'>"+''+"</th>";
+  table+="<th>Ticket amount:</th>";
   table+="<th>Price:</th>";
   table+="<th>Total:</th>";
   table+="</tr>";
@@ -170,8 +170,8 @@ window.onload=function makeTable(){
 
     $.get("datasource/selectedMovie.json",function(selected){
       var tickets=document.getElementById('ticketAmount');
-      var sum=document.getElementById('sum');
-      sum.innerHTML=selected.available;
+
+
 
 
 
@@ -193,12 +193,10 @@ window.onload=function makeTable(){
         divs5[i].setAttribute("src",data.images[i].img);
         divs5[i].setAttribute("alt",data.alternative[i].alt);
         divs7[i].innerHTML=data.cinem[i].hall;
-        divs9[i].innerHTML="Available tickets";
-        divs9[i].setAttribute("id",data.movies[i].available);
+        divs9[i].innerHTML=data.movies[i].sold;
         if(selected.movie==data.movies[i].name){
           tickets.setAttribute("max",data.movies[i].available);
           ticketprice.innerHTML=data.price[i].fullprice;
-
 
         }
 
@@ -224,6 +222,8 @@ window.onload=function makeTable(){
 
 
 
+
+
 var table="<table class='table-hover'>";
 table+="<tr>";
 table+="<th>Movie:</th>";
@@ -239,7 +239,7 @@ for(var k=0;k<8;k++){
   table+="<p id='fnt' class='info2'>"+''+"</p>";
   table+="<p id='fnt' class='info3'>"+''+"</p>";
   table+="<p id='fnt' class='info4'>"+''+"</p>";
-  table+="<p><button id='avaiable' class='info5' onclick='getAvailableTickets(this.id)'>"+''+"</p>";
+  table+="<p>Available:</p><p id='fnt' class='info5'>"+''+"</p>";
   table+="</td>";
 
 table+="<td>";
@@ -278,12 +278,6 @@ var reference=document.getElementById("schedule").innerHTML=table;
 return reference;
 
 }
-
-function getAvailableTickets(value){
-  alert("Avaiable tickets:"+id);
-  document.getElementById('tickets').value=id;
-}
-
 function markGreen(){
   return document.getElementById('markMovie').style.backgroundColor="green";
 }

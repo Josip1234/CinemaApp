@@ -27,7 +27,7 @@
      <input id="movie" type="hidden" name="movie" value="">
       <input id="days" type="hidden" name="days" value="">
       <input id="time" type="hidden" name="time" value="">
-      <input id="tickets" type="hidden" name="tickets" value="">
+
      <input  name="submit" type="submit" value="Submit">
 
    </form>
@@ -39,12 +39,10 @@
     $movie=$_POST['movie'] ?? '';
     $days=$_POST['days'] ?? '';
     $time=$_POST['time'] ?? '';
-    $tickets=$_POST['tickets'] ?? '';
-
-    if(($movie=='' || $days=='') || ($time==''||$tickets=='')){
+    if(($movie=='' || $days=='') || $time==''){
 
     }else{
-      $array=array('movie'=>$movie,'days'=>$days,'time'=>$time,'available'=>$tickets);
+      $array=array('movie'=>$movie,'days'=>$days,'time'=>$time);
       $json_data = json_encode($array);
       file_put_contents('datasource/selectedMovie.json', $json_data);
     }
@@ -90,7 +88,7 @@
            <section id="sittingplan">
            </section>
            <section id="seats">
-
+             
            </section>
            <section id="form2">
              <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
