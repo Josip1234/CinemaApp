@@ -1,4 +1,17 @@
 
+function checkValue(value){
+  alert(value);
+  var starts=value.startsWith('green');
+  alert(starts);
+  starts=value.startsWith('red');
+  alert(starts);
+  var num = value.replace(/\D/g,'');
+  alert(num);
+  getSeat(num);
+
+}
+
+
 function getSeat(number){
   if(number<=5){
     var a=document.getElementById('a').innerHTML;
@@ -68,23 +81,25 @@ function createSeats(){
   table+="<tr>";
   table+="<td class='nh' id='a'>"+"Sector A"+"</td>";
   table+="<td class='nh'>";
+  var green="green";
+  var red="red";
   for(var num=1;num<6;num++){
-    table+="<p onClick='getSeat(this.id)' id='"+num+"'>"+"<img id='green' src='img/greenchairicon.png' alt='green'>"+"</p>";
+    table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
   }
   table+="</td>";
   table+="<td class='nh'>";
   for(var num=6;num<11;num++){
-    table+="<p onClick='getSeat(this.id)' id='"+num+"'>"+"<img id='green' src='img/greenchairicon.png' alt='green'>"+"</p>";
+    table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
   }
   table+="</td>";
   table+="<td class='nh'>";
   for(var num=11;num<16;num++){
-    table+="<p onClick='getSeat(this.id)' id='"+num+"'>"+"<img id='green' src='img/greenchairicon.png' alt='green'>"+"</p>";
+    table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
   }
   table+="</td>";
   table+="<td class='nh'>";
   for(var num=16;num<21;num++){
-    table+="<p onClick='getSeat(this.id)' id='"+num+"'>"+"<img id='green' src='img/greenchairicon.png' alt='green'>"+"</p>";
+    table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
   }
   table+="</td>";
   table+="</tr>";
@@ -92,22 +107,22 @@ function createSeats(){
   table+="<td class='nh' id='b'>"+"Sector B"+"</td>";
   table+="<td class='nh'>";
   for(var num=21;num<26;num++){
-    table+="<p onClick='getSeat(this.id)' id='"+num+"'>"+"<img id='green' src='img/greenchairicon.png' alt='green'>"+"</p>";
+    table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
   }
   table+="</td>";
   table+="<td class='nh'>";
   for(var num=26;num<31;num++){
-    table+="<p onClick='getSeat(this.id)' id='"+num+"'>"+"<img id='green' src='img/greenchairicon.png' alt='green'>"+"</p>";
+    table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
   }
   table+="</td>";
   table+="<td class='nh'>";
   for(var num=31;num<36;num++){
-    table+="<p onClick='getSeat(this.id)' id='"+num+"'>"+"<img id='red' src='img/redchairicon.png' alt='red'>"+"</p>";
+    table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
   }
   table+="</td>";
   table+="<td class='nh'>";
   for(var num=36;num<41;num++){
-    table+="<p onClick='getSeat(this.id)' id='"+num+"'>"+"<img id='red' src='img/redchairicon.png' alt='red'>"+"</p>";
+    table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
   }
   table+="</td>";
   table+="</tr>";
@@ -115,22 +130,22 @@ function createSeats(){
   table+="<td class='nh' id='c'>"+"Sector C"+"</td>";
   table+="<td class='nh'>";
   for(var num=41;num<46;num++){
-    table+="<p onClick='getSeat(this.id)' id='"+num+"'>"+"<img id='red' src='img/redchairicon.png' alt='red'>"+"</p>";
+    table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
   }
   table+="</td>";
   table+="<td class='nh'>";
   for(var num=46;num<51;num++){
-    table+="<p onClick='getSeat(this.id)' id='"+num+"'>"+"<img id='red' src='img/redchairicon.png' alt='red'>"+"</p>";
+    table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
   }
   table+="</td>";
   table+="<td class='nh'>";
   for(var num=51;num<56;num++){
-    table+="<p onClick='getSeat(this.id)' id='"+num+"'>"+"<img id='red' src='img/redchairicon.png' alt='red'>"+"</p>";
+    table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
   }
   table+="</td>";
   table+="<td class='nh'>";
   for(var num=56;num<61;num++){
-    table+="<p onClick='getSeat(this.id)' id='"+num+"'>"+"<img id='red' src='img/redchairicon.png' alt='red'>"+"</p>";
+    table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
   }
   table+="</td>";
 
