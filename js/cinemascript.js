@@ -1,8 +1,107 @@
 function createSeats(){
 
   var table="<h2>Sitting plan</h2>";
-  table+="<table class='table'>";
+  table+="<table class='table'>"
   table+="<tr>";
+  table+="<th>Seats</th>";
+  table+="<th id='x'>Sector X</th>";
+  table+="<th id='y'>Sector Y</th>";
+  table+="<th id='u'>Sector U</th>";
+  table+="<th id='z'>Sector Z</th>";
+  table+="</tr>";
+  table+="<tr>";
+  table+="<td class='nh' id='a'>"+"Sector A"+"</td>";
+  table+="<td class='nh'>";
+  for(var num=1;num<16;num++){
+    table+="<p id='"+num+"'>"+num+"</p>";
+  }
+  table+="</td>";
+  table+="<td class='nh'>";
+  for(var num=16;num<31;num++){
+    table+="<p id='"+num+"'>"+num+"</p>";
+  }
+  table+="</td>";
+  table+="<td class='nh'>";
+  for(var num=31;num<46;num++){
+    table+="<p id='"+num+"'>"+num+"</p>";
+  }
+  table+="</td>";
+  table+="<td class='nh'>";
+  for(var num=46;num<61;num++){
+    table+="<p id='"+num+"'>"+num+"</p>";
+  }
+  table+="</td>";
+  table+="</tr>";
+  table+="<tr>";
+  table+="<td class='nh' id='b'>"+"Sector B"+"</td>";
+  table+="<td class='nh'>";
+  for(var num=61;num<76;num++){
+    table+="<p id='"+num+"'>"+num+"</p>";
+  }
+  table+="</td>";
+  table+="<td class='nh'>";
+  for(var num=76;num<91;num++){
+    table+="<p id='"+num+"'>"+num+"</p>";
+  }
+  table+="</td>";
+  table+="<td class='nh'>";
+  for(var num=91;num<106;num++){
+    table+="<p id='"+num+"'>"+num+"</p>";
+  }
+  table+="</td>";
+  table+="<td class='nh'>";
+  for(var num=106;num<121;num++){
+    table+="<p id='"+num+"'>"+num+"</p>";
+  }
+  table+="</td>";
+  table+="</tr>";
+  table+="<tr>";
+  table+="<td class='nh' id='c'>"+"Sector C"+"</td>";
+  table+="<td class='nh'>";
+  for(var num=121;num<136;num++){
+    table+="<p id='"+num+"'>"+num+"</p>";
+  }
+  table+="</td>";
+  table+="<td class='nh'>";
+  for(var num=136;num<151;num++){
+    table+="<p id='"+num+"'>"+num+"</p>";
+  }
+  table+="</td>";
+  table+="<td class='nh'>";
+  for(var num=151;num<166;num++){
+    table+="<p id='"+num+"'>"+num+"</p>";
+  }
+  table+="</td>";
+  table+="<td class='nh'>";
+  for(var num=166;num<181;num++){
+    table+="<p id='"+num+"'>"+num+"</p>";
+  }
+  table+="</td>";
+  table+="</tr>";
+  table+="<tr>";
+  table+="<td class='nh' id='d'>"+"Sector D"+"</td>";
+  table+="<td class='nh'>";
+  for(var num=181;num<196;num++){
+    table+="<p id='"+num+"'>"+num+"</p>";
+  }
+  table+="</td>";
+  table+="<td class='nh'>";
+  for(var num=196;num<211;num++){
+    table+="<p id='"+num+"'>"+num+"</p>";
+  }
+  table+="</td>";
+
+  table+="<td class='nh'>";
+  for(var num=211;num<226;num++){
+    table+="<p id='"+num+"'>"+num+"</p>";
+  }
+  table+="</td>";
+
+  table+="<td class='nh'>";
+  for(var num=226;num<241;num++){
+    table+="<p id='"+num+"'>"+num+"</p>";
+  }
+  table+="</td>";
   table+="</tr>";
   return document.getElementById('seats').innerHTML=table;
 }
