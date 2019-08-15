@@ -1,13 +1,15 @@
 
 function checkValue(value){
-  alert(value);
   var starts=value.startsWith('green');
-  alert(starts);
-  starts=value.startsWith('red');
-  alert(starts);
-  var num = value.replace(/\D/g,'');
-  alert(num);
-  getSeat(num);
+
+  if(starts==true){
+      var num = value.replace(/\D/g,'');
+      getSeat(num);
+  }else if(starts=value.startsWith('red')==true){
+    alert("This seat is taken. Please, choose another seat.")
+  }
+
+
 
 }
 
