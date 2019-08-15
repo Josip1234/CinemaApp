@@ -87,6 +87,9 @@
 
            <section id="sittingplan">
            </section>
+           <section id="seats">
+             
+           </section>
            <section id="form2">
              <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
 

@@ -1,4 +1,11 @@
+function createSeats(){
 
+  var table="<h2>Sitting plan</h2>";
+  table+="<table class='table'>";
+  table+="<tr>";
+  table+="</tr>";
+  return document.getElementById('seats').innerHTML=table;
+}
 
 
 function countTotal(){
@@ -69,6 +76,7 @@ function chooseTicketOptions(){
 
 
 window.onload=function makeTable(){
+  createSeats();
   chooseTicketOptions();
   hideSecondSection();
 
