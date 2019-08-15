@@ -4,6 +4,7 @@ function checkValue(value){
 
   if(starts==true){
       var num = value.replace(/\D/g,'');
+      document.getElementById('seatNumber').value=num;
       getSeat(num);
   }else if(starts=value.startsWith('red')==true){
     alert("This seat is taken. Please, choose another seat.")
@@ -18,51 +19,64 @@ function getSeat(number){
   if(number<=5){
     var a=document.getElementById('a').innerHTML;
     var th=document.getElementById('x').innerHTML;
-    alert("Seat number: "+number+" is at place:"+a+" "+th);
+    document.getElementById('sector1').value=a;
+    document.getElementById('sector2').value=th;
+
   }else if(number>5 && number<=10){
     var a=document.getElementById('a').innerHTML;
     var th=document.getElementById('y').innerHTML;
-    alert("Seat number: "+number+" is at place:"+a+" "+th);
+    document.getElementById('sector1').value=a;
+    document.getElementById('sector2').value=th;
   }else if(number>10 && number<=15){
     var a=document.getElementById('a').innerHTML;
     var th=document.getElementById('u').innerHTML;
-    alert("Seat number: "+number+" is at place:"+a+" "+th);
+    document.getElementById('sector1').value=a;
+    document.getElementById('sector2').value=th;
   }else if(number>15 && number<=20){
     var a=document.getElementById('a').innerHTML;
     var th=document.getElementById('z').innerHTML;
-    alert("Seat number: "+number+" is at place:"+a+" "+th);
+    document.getElementById('sector1').value=a;
+    document.getElementById('sector2').value=th;
   }else if(number>20 && number<=25){
     var b=document.getElementById('b').innerHTML;
     var th=document.getElementById('x').innerHTML;
-    alert("Seat number: "+number+" is at place:"+b+" "+th);
+    document.getElementById('sector1').value=b;
+    document.getElementById('sector2').value=th;
   }else if(number>25 && number<=30){
     var b=document.getElementById('b').innerHTML;
     var th=document.getElementById('y').innerHTML;
-    alert("Seat number: "+number+" is at place:"+b+" "+th);
+    document.getElementById('sector1').value=b;
+    document.getElementById('sector2').value=th;
   }else if(number>30 && number<=35){
     var b=document.getElementById('b').innerHTML;
     var th=document.getElementById('u').innerHTML;
-    alert("Seat number: "+number+" is at place:"+b+" "+th);
+    document.getElementById('sector1').value=b;
+    document.getElementById('sector2').value=th;
   }else if(number>35 && number<=40){
     var b=document.getElementById('b').innerHTML;
     var th=document.getElementById('z').innerHTML;
-    alert("Seat number: "+number+" is at place:"+b+" "+th);
+    document.getElementById('sector1').value=b;
+    document.getElementById('sector2').value=th;
   }else if(number>40 && number<=45){
     var c=document.getElementById('c').innerHTML;
     var th=document.getElementById('x').innerHTML;
-    alert("Seat number: "+number+" is at place:"+c+" "+th);
+    document.getElementById('sector1').value=c;
+    document.getElementById('sector2').value=th;
   }else if(number>45 && number<=50){
     var c=document.getElementById('c').innerHTML;
     var th=document.getElementById('y').innerHTML;
-    alert("Seat number: "+number+" is at place:"+c+" "+th);
+    document.getElementById('sector1').value=c;
+    document.getElementById('sector2').value=th;
   }else if(number>50 && number<=55){
     var c=document.getElementById('c').innerHTML;
     var th=document.getElementById('u').innerHTML;
-    alert("Seat number: "+number+" is at place:"+c+" "+th);
+    document.getElementById('sector1').value=c;
+    document.getElementById('sector2').value=th;
   }  else if(number>55 && number<=60){
     var c=document.getElementById('c').innerHTML;
     var th=document.getElementById('z').innerHTML;
-    alert("Seat number: "+number+" is at place:"+c+" "+th);
+    document.getElementById('sector1').value=c;
+    document.getElementById('sector2').value=th;
   }
 
 

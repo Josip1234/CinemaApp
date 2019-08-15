@@ -51,7 +51,9 @@
     $ticketcategory=$_POST['ticketcategory'] ?? '';
     $ticketamount=$_POST['ticketamount'] ?? '';
     $price=$_POST['price'] ?? '';
-
+    $seatNumber=$_POST['seatNumber'] ?? '';
+    $sector1=$_POST['sector1'] ?? '';
+    $sector2=$_POST['sector2'] ?? '';
 
     $discount='';
     if($ticketcategory=="Children 5-10 years"){
@@ -67,10 +69,10 @@
 }
     $total=$_POST['total'] ?? '';
 
-     if((($ticketcategory=='' || $ticketamount=='')||($price==''||$discount==''))||$total==''){
+     if(((($sector2==''||$total=='')||($seatNumber==''|| $sector1=='')))||((($ticketcategory==''|| $ticketamount=='')||($price==''||$discount=='')))){
 
      }else{
-       $array=array('ticketcategory'=>$ticketcategory,'ticketamount'=>$ticketamount,'price'=>$price,'discount'=>$discount,'total'=>$total);
+       $array=array('ticketcategory'=>$ticketcategory,'ticketamount'=>$ticketamount,'price'=>$price,'discount'=>$discount,'total'=>$total,'seatNo'=>$seatNumber,'sector1'=>$sector1,'sector2'=>$sector2);
        $json_data = json_encode($array);
        file_put_contents('datasource/ticketDetails.json', $json_data);
      }
@@ -88,7 +90,7 @@
            <section id="sittingplan">
            </section>
            <section id="seats">
-             
+
            </section>
            <section id="form2">
              <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
@@ -97,6 +99,9 @@
                <input id="ticketamount" type="hidden" name="ticketamount" value="">
                <input id="price" type="hidden" name="price" value="">
               <input id="total" type="hidden" name="total" value="">
+              <input id="seatNumber" type="hidden" name="seatNumber" value="">
+              <input id="sector1" type="hidden" name="sector1" value="">
+              <input id="sector2" type="hidden" name="sector2" value="">
 
               <input  name="submit" type="submit" value="Submit">
 
