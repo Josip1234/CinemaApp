@@ -12,45 +12,45 @@ function createSeats(){
   table+="<tr>";
   table+="<td class='nh' id='a'>"+"Sector A"+"</td>";
   table+="<td class='nh'>";
-  for(var num=1;num<16;num++){
-    table+="<p id='"+num+"'>"+num+"</p>";
+  for(var num=1;num<6;num++){
+    table+="<p id='"+num+"'>"+"<img id='green' src='img/greenchairicon.png' alt='green'>"+"</p>";
   }
   table+="</td>";
   table+="<td class='nh'>";
-  for(var num=16;num<31;num++){
-    table+="<p id='"+num+"'>"+num+"</p>";
+  for(var num=6;num<11;num++){
+    table+="<p id='"+num+"'>"+"<img id='green' src='img/greenchairicon.png' alt='green'>"+"</p>";
   }
   table+="</td>";
   table+="<td class='nh'>";
-  for(var num=31;num<46;num++){
-    table+="<p id='"+num+"'>"+num+"</p>";
+  for(var num=11;num<17;num++){
+    table+="<p id='"+num+"'>"+"<img id='green' src='img/greenchairicon.png' alt='green'>"+"</p>";
   }
   table+="</td>";
   table+="<td class='nh'>";
-  for(var num=46;num<61;num++){
-    table+="<p id='"+num+"'>"+num+"</p>";
+  for(var num=17;num<22;num++){
+    table+="<p id='"+num+"'>"+"<img id='green' src='img/greenchairicon.png' alt='green'>"+"</p>";
   }
   table+="</td>";
   table+="</tr>";
   table+="<tr>";
   table+="<td class='nh' id='b'>"+"Sector B"+"</td>";
   table+="<td class='nh'>";
-  for(var num=61;num<76;num++){
+  for(var num=22;num<27;num++){
     table+="<p id='"+num+"'>"+num+"</p>";
   }
   table+="</td>";
   table+="<td class='nh'>";
-  for(var num=76;num<91;num++){
+  for(var num=27;num<32;num++){
     table+="<p id='"+num+"'>"+num+"</p>";
   }
   table+="</td>";
   table+="<td class='nh'>";
-  for(var num=91;num<106;num++){
+  for(var num=32;num<37;num++){
     table+="<p id='"+num+"'>"+num+"</p>";
   }
   table+="</td>";
   table+="<td class='nh'>";
-  for(var num=106;num<121;num++){
+  for(var num=37;num<42;num++){
     table+="<p id='"+num+"'>"+num+"</p>";
   }
   table+="</td>";
@@ -58,50 +58,26 @@ function createSeats(){
   table+="<tr>";
   table+="<td class='nh' id='c'>"+"Sector C"+"</td>";
   table+="<td class='nh'>";
-  for(var num=121;num<136;num++){
+  for(var num=42;num<47;num++){
     table+="<p id='"+num+"'>"+num+"</p>";
   }
   table+="</td>";
   table+="<td class='nh'>";
-  for(var num=136;num<151;num++){
+  for(var num=47;num<52;num++){
     table+="<p id='"+num+"'>"+num+"</p>";
   }
   table+="</td>";
   table+="<td class='nh'>";
-  for(var num=151;num<166;num++){
+  for(var num=52;num<57;num++){
     table+="<p id='"+num+"'>"+num+"</p>";
   }
   table+="</td>";
   table+="<td class='nh'>";
-  for(var num=166;num<181;num++){
-    table+="<p id='"+num+"'>"+num+"</p>";
-  }
-  table+="</td>";
-  table+="</tr>";
-  table+="<tr>";
-  table+="<td class='nh' id='d'>"+"Sector D"+"</td>";
-  table+="<td class='nh'>";
-  for(var num=181;num<196;num++){
-    table+="<p id='"+num+"'>"+num+"</p>";
-  }
-  table+="</td>";
-  table+="<td class='nh'>";
-  for(var num=196;num<211;num++){
+  for(var num=57;num<61;num++){
     table+="<p id='"+num+"'>"+num+"</p>";
   }
   table+="</td>";
 
-  table+="<td class='nh'>";
-  for(var num=211;num<226;num++){
-    table+="<p id='"+num+"'>"+num+"</p>";
-  }
-  table+="</td>";
-
-  table+="<td class='nh'>";
-  for(var num=226;num<241;num++){
-    table+="<p id='"+num+"'>"+num+"</p>";
-  }
-  table+="</td>";
   table+="</tr>";
   return document.getElementById('seats').innerHTML=table;
 }
