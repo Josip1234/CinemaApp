@@ -165,6 +165,7 @@ window.onload=function makeTable(){
     var divs6 = document.getElementsByClassName('day');
     var divs7 = document.getElementsByClassName('info4');
     var divs8=document.getElementsByClassName('time');
+    var divs9 = document.getElementsByClassName('info5');
     var ticketprice=document.getElementById('ticketprice');
 
     $.get("datasource/selectedMovie.json",function(selected){
@@ -192,7 +193,7 @@ window.onload=function makeTable(){
         divs5[i].setAttribute("src",data.images[i].img);
         divs5[i].setAttribute("alt",data.alternative[i].alt);
         divs7[i].innerHTML=data.cinem[i].hall;
-
+        divs9[i].innerHTML=data.movies[i].sold;
         if(selected.movie==data.movies[i].name){
           tickets.setAttribute("max",data.movies[i].available);
           ticketprice.innerHTML=data.price[i].fullprice;
@@ -238,6 +239,7 @@ for(var k=0;k<8;k++){
   table+="<p id='fnt' class='info2'>"+''+"</p>";
   table+="<p id='fnt' class='info3'>"+''+"</p>";
   table+="<p id='fnt' class='info4'>"+''+"</p>";
+  table+="<p>Available:</p><p id='fnt' class='info5'>"+''+"</p>";
   table+="</td>";
 
 table+="<td>";
