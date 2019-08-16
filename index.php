@@ -106,10 +106,16 @@
               <input  name="submit" type="submit" value="Submit">
 
             </form>
-
+             <button type="button" class="btn btn-primary" onclick="showBilling()">Billing</button>
            </section>
-        </seection>
+
+        </section>
       </div>
+    </div>
+    <div class="row">
+      <section id="billing">
+        <h2>Your bill:</h2>
+      </section>
     </div>
    </div>
   </body>

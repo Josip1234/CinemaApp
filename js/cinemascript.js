@@ -1,4 +1,10 @@
-
+function hideBilling(){
+  document.getElementById('billing').style.display='none';
+}
+function showBilling(){
+  hideSecondSection();
+  document.getElementById('billing').style.display='initial';
+}
 function checkValue(value){
   var starts=value.startsWith('green');
 
@@ -238,9 +244,11 @@ function chooseTicketOptions(){
 
 
 window.onload=function makeTable(){
+  hideBilling();
   createSeats();
   chooseTicketOptions();
   hideSecondSection();
+
 
   $.get( "datasource/movies.json", function( data ) {
 
@@ -382,7 +390,7 @@ function chosenProjections(movie,day,time){
   alert("You have chosen:"+movie+"on"+day+" "+time);
 }
 function showSecondSection(){
-
+hideBilling();
 hideFirstSection();
 document.getElementById('section2').style.display="initial";
 }
