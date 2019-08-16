@@ -27,6 +27,7 @@
      <input id="movie" type="hidden" name="movie" value="">
       <input id="days" type="hidden" name="days" value="">
       <input id="time" type="hidden" name="time" value="">
+      
 
      <input  name="submit" type="submit" value="Submit">
 
@@ -49,12 +50,12 @@
     }
 
 
-    $ticketcategory=$_POST['ticketcategory'];
-    $ticketamount=$_POST['ticketamount'];
-    $price=$_POST['price'];
-    $seatNumber=$_POST['seatNumber'];
-    $sector1=$_POST['sector1'] ;
-    $sector2=$_POST['sector2'];
+    $ticketcategory=$_POST['ticketcategory']?? '';
+    $ticketamount=$_POST['ticketamount']?? '';
+    $price=$_POST['price']?? '';
+    $seatNumber=$_POST['seatNumber']?? '';
+    $sector1=$_POST['sector1'] ?? '';
+    $sector2=$_POST['sector2']?? '';
 
     $discount='';
     if($ticketcategory=="Children 5-10 years"){

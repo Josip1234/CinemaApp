@@ -25,7 +25,7 @@ function checkValue(value){
 
 
   $.get( "datasource/selectedMovie.json", function( movie ) {
-    
+
     document.getElementById('showdetails').innerHTML="<h2>Chosen show:</h2><p>"+movie.movie+"</p><p>"+movie.days+"</p><p>"+movie.time+"</p>";
 
   });
@@ -308,7 +308,6 @@ window.onload=function makeTable(){
         divs[i].setAttribute("id",data.movies[i].name);
         divs2[i].innerHTML=data.movies[i].name;
         divs3[i].innerHTML=data.movie[i].type;
-        divs3[i].setAttribute("id",data.movie[i].type);
         divs4[i].innerHTML=data.dur[i].duration;
         divs5[i].setAttribute("src",data.images[i].img);
         divs5[i].setAttribute("alt",data.alternative[i].alt);
@@ -317,7 +316,7 @@ window.onload=function makeTable(){
         if(selected.movie==data.movies[i].name){
           tickets.setAttribute("max",data.movies[i].available);
           ticketprice.innerHTML=data.price[i].fullprice;
-
+          
         }
 
 
@@ -402,6 +401,7 @@ function markGreen(){
   return document.getElementById('markMovie').style.backgroundColor="green";
 }
 function showdata(id){
+
 
   return document.getElementById('movie').value=id;
 }
