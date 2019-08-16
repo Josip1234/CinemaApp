@@ -20,13 +20,14 @@ function checkValue(value){
 
 }
  function showSelectedMovieDetails(){
+   jQuery.ajaxSetup({ cache: false });
   $.get( "datasource/selectedMovie.json", function( movie ) {
     document.getElementById('showdetails').innerHTML="<h2>Chosen show:</h2><p>"+movie.movie+"</p><p>"+movie.days+"</p><p>"+movie.time+"</p>";
 
 
   });
   $.get( "datasource/ticketDetails.json", function(data ) {
-    document.getElementById('ticketDetails').innerHTML="<h2>Chosen ticket:</h2><p>"+data.ticketcategory+"</p><p>"+data.ticketamount+"</p><p>"+data.price+"</p><p>"+data.discount+"</p><p>"+data.total+"</p><p>"+data.seatNo+"</p><p>"+data.sector1+"</p><p>"+data.sector2+"</p>";
+    document.getElementById('ticketDetails').innerHTML="<h2>Chosen ticket:</h2><p>"+data.ticketcategory+"</p><p>"+data.ticketamount+"</p><p>"+data.price+"</p><p>"+data.discount+"</p><p>"+(data.total*data.discount).toFixed(2)+"</p><p>"+data.seatNo+"</p><p>"+data.sector1+"</p><p>"+data.sector2+"</p>";
 
 
   });
