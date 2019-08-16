@@ -49,12 +49,12 @@
     }
 
 
-    $ticketcategory=$_POST['ticketcategory'] ?? '';
-    $ticketamount=$_POST['ticketamount'] ?? '';
-    $price=$_POST['price'] ?? '';
-    $seatNumber=$_POST['seatNumber'] ?? '';
-    $sector1=$_POST['sector1'] ?? '';
-    $sector2=$_POST['sector2'] ?? '';
+    $ticketcategory=$_POST['ticketcategory'];
+    $ticketamount=$_POST['ticketamount'];
+    $price=$_POST['price'];
+    $seatNumber=$_POST['seatNumber'];
+    $sector1=$_POST['sector1'] ;
+    $sector2=$_POST['sector2'];
 
     $discount='';
     if($ticketcategory=="Children 5-10 years"){
@@ -66,7 +66,7 @@
 }else if($ticketcategory=="Regular student 19-25 years"){
        $discount=50/100;
 }else if($ticketcategory=="Adult"){
-     $discount=0/100;
+     $discount="0";
 }
     $total=$_POST['total'] ?? '';
 

@@ -27,7 +27,14 @@ function checkValue(value){
 
   });
   $.get( "datasource/ticketDetails.json", function(data ) {
-    document.getElementById('ticketDetails').innerHTML="<h2>Chosen ticket:</h2><p>"+data.ticketcategory+"</p><p>"+data.ticketamount+"</p><p>"+data.price+"</p><p>"+data.discount+"</p><p>"+(data.total*data.discount).toFixed(2)+"</p><p>"+data.seatNo+"</p><p>"+data.sector1+"</p><p>"+data.sector2+"</p>";
+    if(data.discount=="0"){
+      count=data.price;
+    }else{
+      var count=(data.total*data.discount).toFixed(2);
+      
+    }
+
+     document.getElementById('ticketDetails').innerHTML="<h2>Chosen ticket:</h2><p>"+data.ticketcategory+"</p><p>"+data.ticketamount+"</p><p>"+data.price+"</p><p>"+data.discount+"</p><p>"+count+"</p><p>"+data.seatNo+"</p><p>"+data.sector1+"</p><p>"+data.sector2+"</p>";
 
 
   });
