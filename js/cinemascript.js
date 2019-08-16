@@ -34,7 +34,7 @@ $.get( "datasource/movies.json", function(data) {
       if(movie.movie==data.movies[i].name){
         index=i;
 
-        document.getElementById('showdetails').innerHTML="<h2>Chosen show:</h2><p>"+movie.movie+"</p><p>"+movie.days+"</p><p>"+movie.time+"</p><p>"+data.movie[index].type+"</p>";
+        document.getElementById('showdetails').innerHTML="<h2>Chosen show:</h2><p>"+movie.movie+"</p><p>"+movie.days+"</p><p>"+movie.time+"</p><p>"+data.movie[index].type+"</p></p>"+data.dur[index].duration+"</p><p>"+data.cinem[index].hall+"</p>";
         break;
       }
 
