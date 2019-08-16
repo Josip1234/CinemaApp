@@ -113,9 +113,17 @@
       </div>
     </div>
     <div class="row">
+      <div class="col">
       <section id="billing">
         <h2>Your bill:</h2>
+        <section id="showdetails">
+          <h2>Chosen show:</h2>
+        </section>
+        <section id="ticketDetails">
+         <h2>Ticket details:</h2>
+        </section>
       </section>
+    </div>
     </div>
    </div>
   </body>
