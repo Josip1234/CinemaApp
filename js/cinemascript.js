@@ -19,6 +19,18 @@ function checkValue(value){
 
 
 }
+ function showSelectedMovieDetails(){
+  $.get( "datasource/selectedMovie.json", function( movie ) {
+    document.getElementById('showdetails').innerHTML="<h2>Chosen show:</h2><p>"+movie.movie+"</p><p>"+movie.days+"</p><p>"+movie.time+"</p>";
+
+
+  });
+  $.get( "datasource/ticketDetails.json", function(data ) {
+    document.getElementById('ticketDetails').innerHTML="<h2>Chosen ticket:</h2><p>"+data.ticketcategory+"</p><p>"+data.ticketamount+"</p><p>"+data.price+"</p><p>"+data.discount+"</p><p>"+data.total+"</p><p>"+data.seatNo+"</p><p>"+data.sector1+"</p><p>"+data.sector2+"</p>";
+
+
+  });
+}
 
 
 function getSeat(number){
@@ -377,8 +389,10 @@ function markGreen(){
   return document.getElementById('markMovie').style.backgroundColor="green";
 }
 function showdata(id){
+
   return document.getElementById('movie').value=id;
 }
+
 function chosenDays(day){
 
   return document.getElementById('days').value=day;
@@ -386,6 +400,7 @@ function chosenDays(day){
 function chosenTime(time){
   return document.getElementById('time').value=time;
 }
+
 function chosenProjections(movie,day,time){
   alert("You have chosen:"+movie+"on"+day+" "+time);
 }

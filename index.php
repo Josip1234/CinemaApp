@@ -39,6 +39,7 @@
     $movie=$_POST['movie'] ?? '';
     $days=$_POST['days'] ?? '';
     $time=$_POST['time'] ?? '';
+
     if(($movie=='' || $days=='') || $time==''){
 
     }else{
@@ -106,7 +107,7 @@
               <input  name="submit" type="submit" value="Submit">
 
             </form>
-             <button type="button" class="btn btn-primary" onclick="showBilling()">Billing</button>
+             <button type="button" class="btn btn-primary" onclick="showSelectedMovieDetails(),showBilling()">Billing</button>
            </section>
 
         </section>
@@ -117,7 +118,7 @@
       <section id="billing">
         <h2>Your bill:</h2>
         <section id="showdetails">
-          <h2>Chosen show:</h2>
+
         </section>
         <section id="ticketDetails">
          <h2>Ticket details:</h2>
