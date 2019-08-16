@@ -21,17 +21,21 @@ function checkValue(value){
 }
  function showSelectedMovieDetails(){
    jQuery.ajaxSetup({ cache: false });
+
+
+
   $.get( "datasource/selectedMovie.json", function( movie ) {
+    
     document.getElementById('showdetails').innerHTML="<h2>Chosen show:</h2><p>"+movie.movie+"</p><p>"+movie.days+"</p><p>"+movie.time+"</p>";
 
-
   });
+
   $.get( "datasource/ticketDetails.json", function(data ) {
     if(data.discount=="0"){
       count=data.price;
     }else{
       var count=(data.total*data.discount).toFixed(2);
-      
+
     }
 
      document.getElementById('ticketDetails').innerHTML="<h2>Chosen ticket:</h2><p>"+data.ticketcategory+"</p><p>"+data.ticketamount+"</p><p>"+data.price+"</p><p>"+data.discount+"</p><p>"+count+"</p><p>"+data.seatNo+"</p><p>"+data.sector1+"</p><p>"+data.sector2+"</p>";
@@ -304,6 +308,7 @@ window.onload=function makeTable(){
         divs[i].setAttribute("id",data.movies[i].name);
         divs2[i].innerHTML=data.movies[i].name;
         divs3[i].innerHTML=data.movie[i].type;
+        divs3[i].setAttribute("id",data.movie[i].type);
         divs4[i].innerHTML=data.dur[i].duration;
         divs5[i].setAttribute("src",data.images[i].img);
         divs5[i].setAttribute("alt",data.alternative[i].alt);
