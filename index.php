@@ -27,7 +27,7 @@
      <input id="movie" type="hidden" name="movie" value="">
       <input id="days" type="hidden" name="days" value="">
       <input id="time" type="hidden" name="time" value="">
-      
+
 
      <input  name="submit" type="submit" value="Submit">
 
@@ -118,7 +118,7 @@
       <div class="col">
       <section id="billing">
         <h2>Your bill:</h2>
-        <section id="showdetails">
+        <section id="showdetails" class="mviedetail">
 
         </section>
         <section id="ticketDetails">

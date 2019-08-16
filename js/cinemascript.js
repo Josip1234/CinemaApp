@@ -23,12 +23,25 @@ function checkValue(value){
    jQuery.ajaxSetup({ cache: false });
 
 
+$.get( "datasource/movies.json", function(data) {
+  var moviedetail=document.getElementsByClassName('moviedetail');
 
   $.get( "datasource/selectedMovie.json", function( movie ) {
 
-    document.getElementById('showdetails').innerHTML="<h2>Chosen show:</h2><p>"+movie.movie+"</p><p>"+movie.days+"</p><p>"+movie.time+"</p>";
+
+    for (i in data.movies) {
+      var index=0;
+      if(movie.movie==data.movies[i].name){
+        index=i;
+
+        document.getElementById('showdetails').innerHTML="<h2>Chosen show:</h2><p>"+movie.movie+"</p><p>"+movie.days+"</p><p>"+movie.time+"</p><p>"+data.movie[index].type+"</p>";
+        break;
+      }
+
+    }
 
   });
+});
 
   $.get( "datasource/ticketDetails.json", function(data ) {
     if(data.discount=="0"){
@@ -316,7 +329,7 @@ window.onload=function makeTable(){
         if(selected.movie==data.movies[i].name){
           tickets.setAttribute("max",data.movies[i].available);
           ticketprice.innerHTML=data.price[i].fullprice;
-          
+
         }
 
 
