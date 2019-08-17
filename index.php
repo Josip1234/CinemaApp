@@ -16,6 +16,19 @@
 
 
    <div class="container-fluid">
+     <nav>
+ <ul class="nav">
+   <li class="nav-item">
+   <a class="nav-link" href="#" onclick="showFirstSection()">Available shows </a>
+   </li>
+   <li class="nav-item">
+   <a class="nav-link" href="#" onclick="showSecondSection()">Tickets and seats</a>
+   </li>
+   <li class="nav-item">
+   <a class="nav-link" href="#" onclick="showSelectedMovieDetails(),showBilling()">Billing</a>
+   </li>
+   </ul>
+</nav>
 
      <div class="row">
        <div class="col">
@@ -33,7 +46,7 @@
      <input  name="submit" class="btn btn-primary" type="submit" value="Submit">
 
    </form>
-     <button type="button" class="btn btn-primary" onclick="showSecondSection()">Tickets</button>
+
   <?php
   if($_SERVER['REQUEST_METHOD']=='POST'){
 
@@ -109,7 +122,7 @@
               <input  name="submit" class="btn btn-primary" type="submit" value="Submit">
 
             </form>
-             <button type="button" class="btn btn-primary" onclick="showSelectedMovieDetails(),showBilling()">Billing</button>
+             
            </section>
 
         </section>
