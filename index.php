@@ -10,6 +10,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-control" content="no-cache">
   </head>
   <body>
 
@@ -29,7 +30,7 @@
       <input id="time" type="hidden" name="time" value="">
 
 
-     <input  name="submit" type="submit" value="Submit">
+     <input  name="submit" class="btn btn-primary" type="submit" value="Submit">
 
    </form>
      <button type="button" class="btn btn-primary" onclick="showSecondSection()">Tickets</button>
@@ -105,7 +106,7 @@
               <input id="sector1" type="hidden" name="sector1" value="">
               <input id="sector2" type="hidden" name="sector2" value="">
 
-              <input  name="submit" type="submit" value="Submit">
+              <input  name="submit" class="btn btn-primary" type="submit" value="Submit">
 
             </form>
              <button type="button" class="btn btn-primary" onclick="showSelectedMovieDetails(),showBilling()">Billing</button>
@@ -117,7 +118,7 @@
     <div class="row">
       <div class="col">
       <section id="billing">
-        <h2>Your bill:</h2>
+        <h2>Show details</h2>
         <section id="showdetails" class="mviedetail">
 
         </section>

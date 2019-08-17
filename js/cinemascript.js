@@ -24,6 +24,7 @@ function checkValue(value){
 
 
 $.get( "datasource/movies.json", function(data) {
+
   var moviedetail=document.getElementsByClassName('moviedetail');
 
   $.get( "datasource/selectedMovie.json", function( movie ) {
@@ -33,8 +34,25 @@ $.get( "datasource/movies.json", function(data) {
       var index=0;
       if(movie.movie==data.movies[i].name){
         index=i;
-
-        document.getElementById('showdetails').innerHTML="<h2>Chosen show:</h2><p>"+movie.movie+"</p><p>"+movie.days+"</p><p>"+movie.time+"</p><p>"+data.movie[index].type+"</p></p>"+data.dur[index].duration+"</p><p>"+data.cinem[index].hall+"</p>";
+        var table="<table>";
+        table+="<tr>";
+        table+="<th>"+"Movie"+"</th>";
+        table+="<th>"+"Date and day of the movie:"+"</th>";
+        table+="<th>"+"Time of the movie:"+"</th>";
+        table+="<th>"+"Movie type:"+"</th>";
+        table+="<th>"+"Movie duration:"+"</th>";
+        table+="<th>"+"Cinema hall:"+"</th>";
+        table+="</tr>";
+        table+="<tr>";
+        table+="<td class='nh'>"+movie.movie+"</td>";
+        table+="<td class='nh'>"+movie.days+"</td>";
+        table+="<td class='nh'>"+movie.time+"</td>";
+        table+="<td class='nh'>"+data.movie[index].type+"</td>";
+        table+="<td class='nh'>"+data.dur[index].duration+"</td>";
+        table+="<td class='nh'>"+data.cinem[index].hall+"</td>";
+        table+="</tr>";
+        table+="</table>";
+        document.getElementById('showdetails').innerHTML=table;
         break;
       }
 
@@ -50,8 +68,29 @@ $.get( "datasource/movies.json", function(data) {
       var count=(data.total*data.discount).toFixed(2);
 
     }
+    var makeT="<h2>Ticket details:</h2>";
+     makeT+="<table>";
+     makeT+="<tr>";
+     makeT+="<th>"+"Ticket category:"+"</th>";
+     makeT+="<th>"+"Ticket amount:"+"</th>";
+     makeT+="<th>"+"Full price:"+"</th>";
+     makeT+="<th>"+"Ticket discount:"+"</th>";
+     makeT+="<th>"+"Price with discount:"+"</th>";
+     makeT+="<th>"+"Seat number:"+"</th>";
+     makeT+="<th>"+"Location of seats:"+"</th>";
+     makeT+="</tr>";
+     makeT+="<tr>";
+     makeT+="<td>"+data.ticketcategory+"</td>";
+     makeT+="<td>"+data.ticketamount+"</td>";
+     makeT+="<td>"+data.price+"</td>";
+     makeT+="<td>"+data.discount+"</td>";
+     makeT+="<td>"+count+"</td>";
+     makeT+="<td>"+data.seatNo+"</td>";
+     makeT+="<td>"+data.sector1+" "+data.sector2+"</td>";
 
-     document.getElementById('ticketDetails').innerHTML="<h2>Chosen ticket:</h2><p>"+data.ticketcategory+"</p><p>"+data.ticketamount+"</p><p>"+data.price+"</p><p>"+data.discount+"</p><p>"+count+"</p><p>"+data.seatNo+"</p><p>"+data.sector1+"</p><p>"+data.sector2+"</p>";
+     makeT+="</tr>";
+     makeT+="</table>";
+     document.getElementById('ticketDetails').innerHTML=makeT;
 
 
   });
