@@ -19,13 +19,13 @@
      <nav>
  <ul class="nav">
    <li class="nav-item">
-   <a class="nav-link" href="#" onclick="showFirstSection()">Available shows </a>
+   <a class="nav-link" href="#" onclick="showFirstSection(),hideBilling()">Available shows </a>
    </li>
    <li class="nav-item">
    <a class="nav-link" href="#" onclick="showSecondSection()">Tickets and seats</a>
    </li>
    <li class="nav-item">
-   <a class="nav-link" href="#" onclick="showSelectedMovieDetails(),showBilling()">Billing</a>
+   <a class="nav-link" href="#" onclick="showSelectedMovieDetails(),showBilling(),hideFirstSection()">Billing</a>
    </li>
    </ul>
 </nav>
@@ -122,7 +122,7 @@
               <input  name="submit" class="btn btn-primary" type="submit" value="Submit">
 
             </form>
-             
+
            </section>
 
         </section>

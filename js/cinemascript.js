@@ -2,6 +2,7 @@ function hideBilling(){
   document.getElementById('billing').style.display='none';
 }
 function showBilling(){
+  hideFirstSection();
   hideSecondSection();
   document.getElementById('billing').style.display='initial';
 }
@@ -165,6 +166,7 @@ function getSeat(number){
 
 }
 
+
 function createSeats(){
 
   var table="<h2>Sitting plan</h2>";
@@ -179,6 +181,9 @@ function createSeats(){
   table+="<tr>";
   table+="<td class='nh' id='a'>"+"Sector A"+"</td>";
   table+="<td class='nh'>";
+
+
+
   var green="green";
   var red="red";
   for(var num=1;num<6;num++){
@@ -293,7 +298,7 @@ function chooseTicketOptions(){
   var table="<h2>Ticket options:</h2>";
   table+="<table class='table'>";
   table+="<tr>";
-  table+="<th>Price category:</th>";
+  table+="<th>Ticket category:</th>";
   table+="<th>Ticket amount:</th>";
   table+="<th>Price:</th>";
   table+="<th>Total:</th>";
@@ -338,6 +343,7 @@ window.onload=function makeTable(){
     var divs8=document.getElementsByClassName('time');
     var divs9 = document.getElementsByClassName('info5');
     var ticketprice=document.getElementById('ticketprice');
+    var divs10 = document.getElementsByClassName('info6');
 
     $.get("datasource/selectedMovie.json",function(selected){
       var tickets=document.getElementById('ticketAmount');
@@ -365,9 +371,13 @@ window.onload=function makeTable(){
         divs5[i].setAttribute("alt",data.alternative[i].alt);
         divs7[i].innerHTML=data.cinem[i].hall;
         divs9[i].innerHTML=data.movies[i].available;
+        divs10[i].innerHTML=data.movies[i].sold;
+        divs10[i].setAttribute("id",data.movies[i].sold);
+
         if(selected.movie==data.movies[i].name){
           tickets.setAttribute("max",data.movies[i].available);
           ticketprice.innerHTML=data.price[i].fullprice;
+
 
         }
 
@@ -410,7 +420,8 @@ for(var k=0;k<8;k++){
   table+="<p id='fnt' class='info2'>"+''+"</p>";
   table+="<p id='fnt' class='info3'>"+''+"</p>";
   table+="<p id='fnt' class='info4'>"+''+"</p>";
-  table+="<p>Available:</p><p id='fnt' class='info5'>"+''+"</p>";
+  table+="<span>Available:<span id='fnt' class='info5'>"+''+"</span></span><br><br>";
+  table+="<span>Sold:<span id='sold' class='info6'>"+''+"</span></span>";
   table+="</td>";
 
 table+="<td>";
