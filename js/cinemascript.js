@@ -190,8 +190,20 @@ function closeTableRow(){
 function randInteger(value){
   return Math.floor(Math.random() * value);
 }
+function generateRandom(value){
+  var random=randInteger(2);
+  var red="red";
+  var green="green";
+  if(random==0){
+    value=freeSeat(green,value);
+  }else{
+    value=takenSeat(red,value);
+  }
+  return value;
+}
+
 function createSeats(){
-$.get( "datasource/movies.json", function( sold ) {
+
   var table="<h2>Sitting plan</h2>";
   table+="<table class='table'>"
   table+=makeTableRow();
@@ -201,226 +213,99 @@ $.get( "datasource/movies.json", function( sold ) {
   table+="<th id='u'>Sector U</th>";
   table+="<th id='z'>Sector Z</th>";
   table+=closeTableRow();
-   $.get( "datasource/selectedMovie.json", function( movie ) {
+
 
 
 var limit;
-         for (i in sold.movies) {
-           if(movie.movie==sold.movies[i].name){
-             limit=sold.movies[i].available;
 
-             break;
-           }
 
-  var random;
 
 
   var green="green";
   var red="red";
-  var newLimit=limit;
-  for(var num=0;num<61;num++){
-    if(num==61){
-      table+=closeTableData();
 
-      table+=closeTableRow();
-
-
-
-    }else if(num==56){
-      table+=closeTableData();
-      table+=createTableData();
-      random=randInteger(2);
-     if(random==0){
-       newLimit=limit-1;
-       if(newLimit==0){
-         table+=takenSeat(red,num);       }else{
-table+=takenSeat(red,num);       }
-     }else if(random==1){
-       table+=takenSeat(red,num);
-       if(newLimit==0){
-table+=takenSeat(red,num);       }
-     }
-    }else if(num==51){
-      table+=closeTableData();
-      table+=createTableData();
-      random=randInteger(2);
-     if(random==0){
-       newLimit=limit-1;
-       if(newLimit==0){
-table+=takenSeat(red,num);       }else{
-         table+=freeSeat(green,num);       }
-     }else if(random==1){
-table+=takenSeat(red,num);
-       if(newLimit==0){
-table+=takenSeat(red,num);       }
-     }
-    }else if(num==46){
-
-      table+=closeTableData();
-      table+=createTableData();
-      random=randInteger(2);
-     if(random==0){
-       newLimit=limit-1;
-       if(newLimit==0){
-table+=takenSeat(red,num);       }else{
-         table+=freeSeat(green,num);       }
-     }else if(random==1){
-table+=takenSeat(red,num);
-       if(newLimit==0){
-table+=takenSeat(red,num);       }
-     }
-    }else if(num==41){
-      table+=closeTableData();
-      table+=closeTableRow();
-      table+=makeTableRow();
-      table+=createSector("C");
-      table+=createTableData();
-      random=randInteger(2);
-     if(random==0){
-       newLimit=limit-1;
-       if(newLimit==0){
-table+=takenSeat(red,num);       }else{
-         table+=freeSeat(green,num);       }
-     }else if(random==1){
-table+=takenSeat(red,num);
-       if(newLimit==0){
-table+=takenSeat(red,num);       }
-     }
-
-    }else if(num==36){
-      table+=closeTableData();
-      table+=createTableData();
-      random=randInteger(2);
-     if(random==0){
-       newLimit=limit-1;
-       if(newLimit==0){
-table+=takenSeat(red,num);       }else{
-         table+=freeSeat(green,num);       }
-     }else if(random==1){
-table+=takenSeat(red,num);
-       if(newLimit==0){
-table+=takenSeat(red,num);       }
-     }
-    }else if(num==31){
-
-        table+=closeTableData();
-        table+=createTableData();
-        random=randInteger(2);
-       if(random==0){
-         newLimit=limit-1;
-         if(newLimit==0){
-table+=takenSeat(red,num);         }else{
-           table+=freeSeat(green,num);         }
-       }else if(random==1){
-table+=takenSeat(red,num);
-         if(newLimit==0){
-table+=takenSeat(red,num);         }
-       }
-    }else if(num==26){
-      table+=closeTableData();
-      table+=createTableData();
-      random=randInteger(2);
-     if(random==0){
-       newLimit=limit-1;
-       if(newLimit==0){
-table+=takenSeat(red,num);       }else{
-         table+=freeSeat(green,num);       }
-     }else if(random==1){
-table+=takenSeat(red,num);
-       if(newLimit==0){
-table+=takenSeat(red,num);       }
-     }
-    }else if(num==21){
-      table+=closeTableData();
-      table+=closeTableRow();
-      table+=makeTableRow();
-      table+=createSector("B");
-      table+=createTableData();
-      random=randInteger(2);
-     if(random==0){
-       newLimit=limit-1;
-       if(newLimit==0){
-table+=takenSeat(red,num);       }else{
-         table+=freeSeat(green,num);       }
-     }else if(random==1){
-table+=takenSeat(red,num);
-       if(newLimit==0){
-table+=takenSeat(red,num);       }
-     }
-    }else if(num==16){
-      table+=closeTableData();
-      table+=createTableData();
-
-         random=randInteger(2);
-        if(random==0){
-          newLimit=limit-1;
-          if(newLimit==0){
-table+=takenSeat(red,num);          }else{
-            table+=freeSeat(green,num);          }
-        }else if(random==1){
-table+=takenSeat(red,num);
-          if(newLimit==0){
-table+=takenSeat(red,num);          }
-        }
-    }else if(num==11){
-      table+=closeTableData();
-      table+=createTableData();
-
-         random=randInteger(2);
-        if(random==0){
-          newLimit=limit-1;
-          if(newLimit==0){
-table+=takenSeat(red,num);          }else{
-            table+=freeSeat(green,num);          }
-        }else if(random==1){
-table+=takenSeat(red,num);
-          if(newLimit==0){
-table+=takenSeat(red,num);          }
-        }
-    }else if(num==6){
-      table+=closeTableData();
-      table+=createTableData();
-
-
-         random=randInteger(2);
-        if(random==0){
-          newLimit=limit-1;
-          if(newLimit==0){
-table+=takenSeat(red,num);          }else{
-            table+=freeSeat(green,num);          }
-        }else if(random==1){
-table+=takenSeat(red,num);
-          if(newLimit==0){
-table+=takenSeat(red,num);          }
-        }
-    }else if(num==0){
-      table+=createSector("A");
-      table+=createTableData();
-
-
-    }else{
-
-
-   random=randInteger(2);
-  if(random==0){
-    newLimit=limit-1;
-    if(newLimit==0){
-      table+=takenSeat(red,num);
-    }else{
-      table+=freeSeat(green,num);
-    }
-
-  }else if(random==1){
-     table+=takenSeat(red,num);
-    if(newLimit==0){
-      table+=takenSeat(red,num);
-    }
+  table+=makeTableRow();
+  table+=createSector("A");
+  table+=createTableData();
+  for(var i=1;i<6;i++){
+     table+=generateRandom(i);
   }
+  table+=closeTableData();
 
-};
+  table+=createTableData();
+  for(var i=6;i<11;i++){
+    table+=generateRandom(i);
+  }
+  table+=closeTableData();
 
-}
-};
+  table+=createTableData();
+  for(var i=11;i<16;i++){
+    table+=generateRandom(i);
+  }
+  table+=closeTableData();
+
+  table+=createTableData();
+  for(var i=16;i<21;i++){
+    table+=generateRandom(i);
+  }
+  table+=closeTableData();
+  table+=closeTableRow();
+  table+=makeTableRow();
+  table+=createSector("B");
+
+  table+=createTableData();
+  for(var i=21;i<26;i++){
+    table+=generateRandom(i);
+  }
+  table+=closeTableData();
+
+  table+=createTableData();
+  for(var i=26;i<31;i++){
+    table+=generateRandom(i);
+  }
+  table+=closeTableData();
+
+  table+=createTableData();
+  for(var i=31;i<36;i++){
+    table+=generateRandom(i);
+  }
+  table+=closeTableData();
+
+  table+=createTableData();
+  for(var i=36;i<41;i++){
+    table+=generateRandom(i);
+  }
+  table+=closeTableData();
+
+  table+=closeTableRow();
+  table+=makeTableRow();
+  table+=createSector("C");
+
+  table+=createTableData();
+  for(var i=41;i<46;i++){
+    table+=generateRandom(i);
+  }
+  table+=closeTableData();
+
+  table+=createTableData();
+  for(var i=46;i<51;i++){
+    table+=generateRandom(i);
+  }
+  table+=closeTableData();
+
+  table+=createTableData();
+  for(var i=51;i<56;i++){
+    table+=generateRandom(i);
+  }
+  table+=closeTableData();
+
+  table+=createTableData();
+  for(var i=56;i<61;i++){
+    table+=generateRandom(i);
+  }
+  table+=closeTableData();
+  table+=closeTableRow();
+  table+="</table>";
 
 
   return document.getElementById('seats').innerHTML=table;
@@ -428,10 +313,8 @@ table+=takenSeat(red,num);          }
 
 
 
-});
 
 
-});
 }
 function countTotal(){
 
