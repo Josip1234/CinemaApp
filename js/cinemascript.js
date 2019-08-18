@@ -1,3 +1,5 @@
+
+
 function hideBilling(){
   document.getElementById('billing').style.display='none';
 }
@@ -169,26 +171,48 @@ function getSeat(number){
 
 function createSeats(){
 
-  var table="<h2>Sitting plan</h2>";
-  table+="<table class='table'>"
-  table+="<tr>";
-  table+="<th>Seats</th>";
-  table+="<th id='x'>Sector X</th>";
-  table+="<th id='y'>Sector Y</th>";
-  table+="<th id='u'>Sector U</th>";
-  table+="<th id='z'>Sector Z</th>";
-  table+="</tr>";
-  table+="<tr>";
-  table+="<td class='nh' id='a'>"+"Sector A"+"</td>";
-  table+="<td class='nh'>";
 
+
+var limit=$.get( "datasource/movies.json", function( sold ) {
+    $.get( "datasource/selectedMovie.json", function( movie ) {
+      var table="<h2>Sitting plan</h2>";
+      table+="<table class='table'>"
+      table+="<tr>";
+      table+="<th>Seats</th>";
+      table+="<th id='x'>Sector X</th>";
+      table+="<th id='y'>Sector Y</th>";
+      table+="<th id='u'>Sector U</th>";
+      table+="<th id='z'>Sector Z</th>";
+      table+="</tr>";
+      table+="<tr>";
+      table+="<td class='nh' id='a'>"+"Sector A"+"</td>";
+      table+="<td class='nh'>";
+
+         for (i in sold.movies) {
+           if(movie.movie==sold.movies[i].name){
+             limit=sold.movies[i].sold;
+             alert(limit);
+
+  var random=Math.floor(Math.random() * 2);
 
 
   var green="green";
   var red="red";
+  var newLimit;
   for(var num=1;num<6;num++){
+
+  if(random==0){
+    newLimit=limit=limit-1;
     table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+  }else{
+    table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+    newLimit=limit=limit-1;
+    if(newLimit==0){
+      table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+    }
   }
+};
+
   table+="</td>";
   table+="<td class='nh'>";
   for(var num=6;num<11;num++){
@@ -253,7 +277,18 @@ function createSeats(){
   table+="</td>";
 
   table+="</tr>";
+  break;
+}
+};
+
+
+
+
   return document.getElementById('seats').innerHTML=table;
+});
+
+
+});
 }
 
 
@@ -375,6 +410,7 @@ window.onload=function makeTable(){
         divs10[i].setAttribute("id",data.movies[i].sold);
 
         if(selected.movie==data.movies[i].name){
+
           tickets.setAttribute("max",data.movies[i].available);
           ticketprice.innerHTML=data.price[i].fullprice;
 
