@@ -208,7 +208,11 @@ var limit=$.get( "datasource/movies.json", function( sold ) {
       random=Math.floor(Math.random() * 2);
      if(random==0){
        newLimit=limit-1;
-       table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+       if(newLimit==0){
+         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+       }else{
+         table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+       }
      }else if(random==1){
        table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
 
@@ -222,7 +226,11 @@ var limit=$.get( "datasource/movies.json", function( sold ) {
       random=Math.floor(Math.random() * 2);
      if(random==0){
        newLimit=limit-1;
-       table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+       if(newLimit==0){
+         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+       }else{
+         table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+       }
      }else if(random==1){
        table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
 
@@ -237,7 +245,11 @@ var limit=$.get( "datasource/movies.json", function( sold ) {
       random=Math.floor(Math.random() * 2);
      if(random==0){
        newLimit=limit-1;
-       table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+       if(newLimit==0){
+         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+       }else{
+         table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+       }
      }else if(random==1){
        table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
 
@@ -254,7 +266,11 @@ var limit=$.get( "datasource/movies.json", function( sold ) {
       random=Math.floor(Math.random() * 2);
      if(random==0){
        newLimit=limit-1;
-       table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+       if(newLimit==0){
+         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+       }else{
+         table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+       }
      }else if(random==1){
        table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
 
@@ -269,7 +285,11 @@ var limit=$.get( "datasource/movies.json", function( sold ) {
       random=Math.floor(Math.random() * 2);
      if(random==0){
        newLimit=limit-1;
-       table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+       if(newLimit==0){
+         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+       }else{
+         table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+       }
      }else if(random==1){
        table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
 
@@ -284,7 +304,11 @@ var limit=$.get( "datasource/movies.json", function( sold ) {
         random=Math.floor(Math.random() * 2);
        if(random==0){
          newLimit=limit-1;
-         table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+         if(newLimit==0){
+           table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+         }else{
+           table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+         }
        }else if(random==1){
          table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
 
@@ -298,7 +322,11 @@ var limit=$.get( "datasource/movies.json", function( sold ) {
       random=Math.floor(Math.random() * 2);
      if(random==0){
        newLimit=limit-1;
-       table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+       if(newLimit==0){
+         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+       }else{
+         table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+       }
      }else if(random==1){
        table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
 
@@ -315,7 +343,11 @@ var limit=$.get( "datasource/movies.json", function( sold ) {
       random=Math.floor(Math.random() * 2);
      if(random==0){
        newLimit=limit-1;
-       table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+       if(newLimit==0){
+         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+       }else{
+         table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+       }
      }else if(random==1){
        table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
 
@@ -330,7 +362,11 @@ var limit=$.get( "datasource/movies.json", function( sold ) {
          random=Math.floor(Math.random() * 2);
         if(random==0){
           newLimit=limit-1;
-          table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+          if(newLimit==0){
+            table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+          }else{
+            table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+          }
         }else if(random==1){
           table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
 
@@ -345,7 +381,11 @@ var limit=$.get( "datasource/movies.json", function( sold ) {
          random=Math.floor(Math.random() * 2);
         if(random==0){
           newLimit=limit-1;
-          table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+          if(newLimit==0){
+            table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+          }else{
+            table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+          }
         }else if(random==1){
           table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
 
@@ -361,7 +401,11 @@ var limit=$.get( "datasource/movies.json", function( sold ) {
          random=Math.floor(Math.random() * 2);
         if(random==0){
           newLimit=limit-1;
-          table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+          if(newLimit==0){
+            table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+          }else{
+            table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+          }
         }else if(random==1){
           table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
 
@@ -379,7 +423,12 @@ var limit=$.get( "datasource/movies.json", function( sold ) {
    random=Math.floor(Math.random() * 2);
   if(random==0){
     newLimit=limit-1;
-    table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+    if(newLimit==0){
+      table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+    }else{
+      table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+    }
+
   }else if(random==1){
     table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
 
