@@ -184,99 +184,226 @@ var limit=$.get( "datasource/movies.json", function( sold ) {
       table+="<th id='u'>Sector U</th>";
       table+="<th id='z'>Sector Z</th>";
       table+="</tr>";
-      table+="<tr>";
-      table+="<td class='nh' id='a'>"+"Sector A"+"</td>";
-      table+="<td class='nh'>";
+
 
          for (i in sold.movies) {
            if(movie.movie==sold.movies[i].name){
              limit=sold.movies[i].sold;
-             alert(limit);
 
-  var random=Math.floor(Math.random() * 2);
+
+  var random;
 
 
   var green="green";
   var red="red";
   var newLimit;
-  for(var num=1;num<6;num++){
+  for(var num=0;num<61;num++){
+    if(num==61){
+      table+="</td>";
 
+      table+="</tr>";
+    }else if(num==56){
+      table+="</td>";
+      table+="<td class='nh'>";
+      random=Math.floor(Math.random() * 2);
+     if(random==0){
+       newLimit=limit-1;
+       table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+     }else if(random==1){
+       table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+
+       if(newLimit==0){
+         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+       }
+     }
+    }else if(num==51){
+      table+="</td>";
+      table+="<td class='nh'>";
+      random=Math.floor(Math.random() * 2);
+     if(random==0){
+       newLimit=limit-1;
+       table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+     }else if(random==1){
+       table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+
+       if(newLimit==0){
+         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+       }
+     }
+    }else if(num==46){
+
+      table+="</td>";
+      table+="<td class='nh'>";
+      random=Math.floor(Math.random() * 2);
+     if(random==0){
+       newLimit=limit-1;
+       table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+     }else if(random==1){
+       table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+
+       if(newLimit==0){
+         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+       }
+     }
+    }else if(num==41){
+      table+="</td>";
+      table+="</tr>";
+      table+="<tr>";
+      table+="<td class='nh' id='c'>"+"Sector C"+"</td>";
+      table+="<td class='nh'>";
+      random=Math.floor(Math.random() * 2);
+     if(random==0){
+       newLimit=limit-1;
+       table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+     }else if(random==1){
+       table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+
+       if(newLimit==0){
+         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+       }
+     }
+
+    }else if(num==36){
+      table+="</td>";
+      table+="<td class='nh'>";
+      random=Math.floor(Math.random() * 2);
+     if(random==0){
+       newLimit=limit-1;
+       table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+     }else if(random==1){
+       table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+
+       if(newLimit==0){
+         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+       }
+     }
+    }else if(num==31){
+
+        table+="</td>";
+        table+="<td class='nh'>";
+        random=Math.floor(Math.random() * 2);
+       if(random==0){
+         newLimit=limit-1;
+         table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+       }else if(random==1){
+         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+
+         if(newLimit==0){
+           table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+         }
+       }
+    }else if(num==26){
+      table+="</td>";
+      table+="<td class='nh'>";
+      random=Math.floor(Math.random() * 2);
+     if(random==0){
+       newLimit=limit-1;
+       table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+     }else if(random==1){
+       table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+
+       if(newLimit==0){
+         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+       }
+     }
+    }else if(num==21){
+      table+="</td>";
+      table+="</tr>";
+      table+="<tr>";
+      table+="<td class='nh' id='b'>"+"Sector B"+"</td>";
+      table+="<td class='nh'>";
+      random=Math.floor(Math.random() * 2);
+     if(random==0){
+       newLimit=limit-1;
+       table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+     }else if(random==1){
+       table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+
+       if(newLimit==0){
+         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+       }
+     }
+    }else if(num==16){
+      table+="</td>";
+      table+="<td class='nh'>";
+
+         random=Math.floor(Math.random() * 2);
+        if(random==0){
+          newLimit=limit-1;
+          table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+        }else if(random==1){
+          table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+
+          if(newLimit==0){
+            table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+          }
+        }
+    }else if(num==11){
+      table+="</td>";
+      table+="<td class='nh'>";
+
+         random=Math.floor(Math.random() * 2);
+        if(random==0){
+          newLimit=limit-1;
+          table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+        }else if(random==1){
+          table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+
+          if(newLimit==0){
+            table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+          }
+        }
+    }else if(num==6){
+      table+="</td>";
+      table+="<td class='nh'>";
+
+
+         random=Math.floor(Math.random() * 2);
+        if(random==0){
+          newLimit=limit-1;
+          table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+        }else if(random==1){
+          table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+
+          if(newLimit==0){
+            table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+          }
+        }
+    }else if(num==0){
+      table+="<tr>";
+      table+="<td class='nh' id='a'>"+"Sector A"+"</td>";
+      table+="<td class='nh'>";
+    }else{
+
+
+   random=Math.floor(Math.random() * 2);
   if(random==0){
-    newLimit=limit=limit-1;
+    newLimit=limit-1;
     table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
-  }else{
+  }else if(random==1){
     table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-    newLimit=limit=limit-1;
+
     if(newLimit==0){
-      table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+      table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
     }
   }
+}
 };
 
-  table+="</td>";
-  table+="<td class='nh'>";
-  for(var num=6;num<11;num++){
-    table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
-  }
-  table+="</td>";
-  table+="<td class='nh'>";
-  for(var num=11;num<16;num++){
-    table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
-  }
-  table+="</td>";
-  table+="<td class='nh'>";
-  for(var num=16;num<21;num++){
-    table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
-  }
-  table+="</td>";
-  table+="</tr>";
-  table+="<tr>";
-  table+="<td class='nh' id='b'>"+"Sector B"+"</td>";
-  table+="<td class='nh'>";
-  for(var num=21;num<26;num++){
-    table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
-  }
-  table+="</td>";
-  table+="<td class='nh'>";
-  for(var num=26;num<31;num++){
-    table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
-  }
-  table+="</td>";
-  table+="<td class='nh'>";
-  for(var num=31;num<36;num++){
-    table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-  }
-  table+="</td>";
-  table+="<td class='nh'>";
-  for(var num=36;num<41;num++){
-    table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-  }
-  table+="</td>";
-  table+="</tr>";
-  table+="<tr>";
-  table+="<td class='nh' id='c'>"+"Sector C"+"</td>";
-  table+="<td class='nh'>";
-  for(var num=41;num<46;num++){
-    table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-  }
-  table+="</td>";
-  table+="<td class='nh'>";
-  for(var num=46;num<51;num++){
-    table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-  }
-  table+="</td>";
-  table+="<td class='nh'>";
-  for(var num=51;num<56;num++){
-    table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-  }
-  table+="</td>";
-  table+="<td class='nh'>";
-  for(var num=56;num<61;num++){
-    table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-  }
-  table+="</td>";
 
-  table+="</tr>";
+
+
+
+
+
+
+
+
+
+
+
+
+
   break;
 }
 };
