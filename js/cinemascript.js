@@ -174,22 +174,23 @@ function createSeats(){
 
 
 $.get( "datasource/movies.json", function( sold ) {
-    $.get( "datasource/selectedMovie.json", function( movie ) {
-      var table="<h2>Sitting plan</h2>";
-      table+="<table class='table'>"
-      table+="<tr>";
-      table+="<th>Seats</th>";
-      table+="<th id='x'>Sector X</th>";
-      table+="<th id='y'>Sector Y</th>";
-      table+="<th id='u'>Sector U</th>";
-      table+="<th id='z'>Sector Z</th>";
-      table+="</tr>";
+  var table="<h2>Sitting plan</h2>";
+  table+="<table class='table'>"
+  table+="<tr>";
+  table+="<th>Seats</th>";
+  table+="<th id='x'>Sector X</th>";
+  table+="<th id='y'>Sector Y</th>";
+  table+="<th id='u'>Sector U</th>";
+  table+="<th id='z'>Sector Z</th>";
+  table+="</tr>";
+   $.get( "datasource/selectedMovie.json", function( movie ) {
 
-     var limit;
+
+var limit;
          for (i in sold.movies) {
            if(movie.movie==sold.movies[i].name){
              limit=sold.movies[i].available;
-             alert(limit);
+
              break;
            }
 
@@ -204,6 +205,7 @@ $.get( "datasource/movies.json", function( sold ) {
       table+="</td>";
 
       table+="</tr>";
+
 
 
     }else if(num==56){
@@ -464,9 +466,10 @@ $.get( "datasource/movies.json", function( sold ) {
 };
 
 
-
-
   return document.getElementById('seats').innerHTML=table;
+
+
+
 
 });
 
