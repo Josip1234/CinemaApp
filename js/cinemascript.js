@@ -173,7 +173,7 @@ function createSeats(){
 
 
 
-var limit=$.get( "datasource/movies.json", function( sold ) {
+$.get( "datasource/movies.json", function( sold ) {
     $.get( "datasource/selectedMovie.json", function( movie ) {
       var table="<h2>Sitting plan</h2>";
       table+="<table class='table'>"
@@ -185,23 +185,27 @@ var limit=$.get( "datasource/movies.json", function( sold ) {
       table+="<th id='z'>Sector Z</th>";
       table+="</tr>";
 
-
+     var limit;
          for (i in sold.movies) {
            if(movie.movie==sold.movies[i].name){
-             limit=sold.movies[i].sold;
-
+             limit=sold.movies[i].available;
+             alert(limit);
+             break;
+           }
 
   var random;
 
 
   var green="green";
   var red="red";
-  var newLimit;
+  var newLimit=limit;
   for(var num=0;num<61;num++){
     if(num==61){
       table+="</td>";
 
       table+="</tr>";
+
+
     }else if(num==56){
       table+="</td>";
       table+="<td class='nh'>";
@@ -417,6 +421,8 @@ var limit=$.get( "datasource/movies.json", function( sold ) {
       table+="<tr>";
       table+="<td class='nh' id='a'>"+"Sector A"+"</td>";
       table+="<td class='nh'>";
+
+
     }else{
 
 
@@ -436,7 +442,7 @@ var limit=$.get( "datasource/movies.json", function( sold ) {
       table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
     }
   }
-}
+
 };
 
 
@@ -453,7 +459,7 @@ var limit=$.get( "datasource/movies.json", function( sold ) {
 
 
 
-  break;
+
 }
 };
 
@@ -461,6 +467,7 @@ var limit=$.get( "datasource/movies.json", function( sold ) {
 
 
   return document.getElementById('seats').innerHTML=table;
+
 });
 
 
