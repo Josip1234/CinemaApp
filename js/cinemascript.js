@@ -1,5 +1,3 @@
-
-
 function hideBilling(){
   document.getElementById('billing').style.display='none';
 }
@@ -98,8 +96,6 @@ $.get( "datasource/movies.json", function(data) {
 
   });
 }
-
-
 function getSeat(number){
   if(number<=5){
     var a=document.getElementById('a').innerHTML;
@@ -167,22 +163,44 @@ function getSeat(number){
 
 
 }
+function takenSeat(red,num){
+  return "<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+}
+function freeSeat(green,num){
+  return "<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
 
-
+}
+function createSector(sector){
+  var table="<tr>";
+  table+="<td class='nh' id='a'>"+"Sector "+sector+"</td>";
+  return table;
+}
+function createTableData(){
+  return "<td class='nh'>";
+}
+function closeTableData(){
+  return "</td>";
+}
+function makeTableRow(){
+  return "<tr>";
+}
+function closeTableRow(){
+  return "</tr>";
+}
+function randInteger(value){
+  return Math.floor(Math.random() * value);
+}
 function createSeats(){
-
-
-
 $.get( "datasource/movies.json", function( sold ) {
   var table="<h2>Sitting plan</h2>";
   table+="<table class='table'>"
-  table+="<tr>";
+  table+=makeTableRow();
   table+="<th>Seats</th>";
   table+="<th id='x'>Sector X</th>";
   table+="<th id='y'>Sector Y</th>";
   table+="<th id='u'>Sector U</th>";
   table+="<th id='z'>Sector Z</th>";
-  table+="</tr>";
+  table+=closeTableRow();
    $.get( "datasource/selectedMovie.json", function( movie ) {
 
 
@@ -202,265 +220,204 @@ var limit;
   var newLimit=limit;
   for(var num=0;num<61;num++){
     if(num==61){
-      table+="</td>";
+      table+=closeTableData();
 
-      table+="</tr>";
+      table+=closeTableRow();
 
 
 
     }else if(num==56){
-      table+="</td>";
-      table+="<td class='nh'>";
-      random=Math.floor(Math.random() * 2);
+      table+=closeTableData();
+      table+=createTableData();
+      random=randInteger(2);
      if(random==0){
        newLimit=limit-1;
        if(newLimit==0){
-         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-       }else{
-         table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
-       }
+         table+=takenSeat(red,num);       }else{
+table+=takenSeat(red,num);       }
      }else if(random==1){
-       table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-
+       table+=takenSeat(red,num);
        if(newLimit==0){
-         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-       }
+table+=takenSeat(red,num);       }
      }
     }else if(num==51){
-      table+="</td>";
-      table+="<td class='nh'>";
-      random=Math.floor(Math.random() * 2);
+      table+=closeTableData();
+      table+=createTableData();
+      random=randInteger(2);
      if(random==0){
        newLimit=limit-1;
        if(newLimit==0){
-         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-       }else{
-         table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
-       }
+table+=takenSeat(red,num);       }else{
+         table+=freeSeat(green,num);       }
      }else if(random==1){
-       table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-
+table+=takenSeat(red,num);
        if(newLimit==0){
-         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-       }
+table+=takenSeat(red,num);       }
      }
     }else if(num==46){
 
-      table+="</td>";
-      table+="<td class='nh'>";
-      random=Math.floor(Math.random() * 2);
+      table+=closeTableData();
+      table+=createTableData();
+      random=randInteger(2);
      if(random==0){
        newLimit=limit-1;
        if(newLimit==0){
-         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-       }else{
-         table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
-       }
+table+=takenSeat(red,num);       }else{
+         table+=freeSeat(green,num);       }
      }else if(random==1){
-       table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-
+table+=takenSeat(red,num);
        if(newLimit==0){
-         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-       }
+table+=takenSeat(red,num);       }
      }
     }else if(num==41){
-      table+="</td>";
-      table+="</tr>";
-      table+="<tr>";
-      table+="<td class='nh' id='c'>"+"Sector C"+"</td>";
-      table+="<td class='nh'>";
-      random=Math.floor(Math.random() * 2);
+      table+=closeTableData();
+      table+=closeTableRow();
+      table+=makeTableRow();
+      table+=createSector("C");
+      table+=createTableData();
+      random=randInteger(2);
      if(random==0){
        newLimit=limit-1;
        if(newLimit==0){
-         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-       }else{
-         table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
-       }
+table+=takenSeat(red,num);       }else{
+         table+=freeSeat(green,num);       }
      }else if(random==1){
-       table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-
+table+=takenSeat(red,num);
        if(newLimit==0){
-         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-       }
+table+=takenSeat(red,num);       }
      }
 
     }else if(num==36){
-      table+="</td>";
-      table+="<td class='nh'>";
-      random=Math.floor(Math.random() * 2);
+      table+=closeTableData();
+      table+=createTableData();
+      random=randInteger(2);
      if(random==0){
        newLimit=limit-1;
        if(newLimit==0){
-         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-       }else{
-         table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
-       }
+table+=takenSeat(red,num);       }else{
+         table+=freeSeat(green,num);       }
      }else if(random==1){
-       table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-
+table+=takenSeat(red,num);
        if(newLimit==0){
-         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-       }
+table+=takenSeat(red,num);       }
      }
     }else if(num==31){
 
-        table+="</td>";
-        table+="<td class='nh'>";
-        random=Math.floor(Math.random() * 2);
+        table+=closeTableData();
+        table+=createTableData();
+        random=randInteger(2);
        if(random==0){
          newLimit=limit-1;
          if(newLimit==0){
-           table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-         }else{
-           table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
-         }
+table+=takenSeat(red,num);         }else{
+           table+=freeSeat(green,num);         }
        }else if(random==1){
-         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-
+table+=takenSeat(red,num);
          if(newLimit==0){
-           table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-         }
+table+=takenSeat(red,num);         }
        }
     }else if(num==26){
-      table+="</td>";
-      table+="<td class='nh'>";
-      random=Math.floor(Math.random() * 2);
+      table+=closeTableData();
+      table+=createTableData();
+      random=randInteger(2);
      if(random==0){
        newLimit=limit-1;
        if(newLimit==0){
-         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-       }else{
-         table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
-       }
+table+=takenSeat(red,num);       }else{
+         table+=freeSeat(green,num);       }
      }else if(random==1){
-       table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-
+table+=takenSeat(red,num);
        if(newLimit==0){
-         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-       }
+table+=takenSeat(red,num);       }
      }
     }else if(num==21){
-      table+="</td>";
-      table+="</tr>";
-      table+="<tr>";
-      table+="<td class='nh' id='b'>"+"Sector B"+"</td>";
-      table+="<td class='nh'>";
-      random=Math.floor(Math.random() * 2);
+      table+=closeTableData();
+      table+=closeTableRow();
+      table+=makeTableRow();
+      table+=createSector("B");
+      table+=createTableData();
+      random=randInteger(2);
      if(random==0){
        newLimit=limit-1;
        if(newLimit==0){
-         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-       }else{
-         table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
-       }
+table+=takenSeat(red,num);       }else{
+         table+=freeSeat(green,num);       }
      }else if(random==1){
-       table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-
+table+=takenSeat(red,num);
        if(newLimit==0){
-         table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-       }
+table+=takenSeat(red,num);       }
      }
     }else if(num==16){
-      table+="</td>";
-      table+="<td class='nh'>";
+      table+=closeTableData();
+      table+=createTableData();
 
-         random=Math.floor(Math.random() * 2);
+         random=randInteger(2);
         if(random==0){
           newLimit=limit-1;
           if(newLimit==0){
-            table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-          }else{
-            table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
-          }
+table+=takenSeat(red,num);          }else{
+            table+=freeSeat(green,num);          }
         }else if(random==1){
-          table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-
+table+=takenSeat(red,num);
           if(newLimit==0){
-            table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-          }
+table+=takenSeat(red,num);          }
         }
     }else if(num==11){
-      table+="</td>";
-      table+="<td class='nh'>";
+      table+=closeTableData();
+      table+=createTableData();
 
-         random=Math.floor(Math.random() * 2);
+         random=randInteger(2);
         if(random==0){
           newLimit=limit-1;
           if(newLimit==0){
-            table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-          }else{
-            table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
-          }
+table+=takenSeat(red,num);          }else{
+            table+=freeSeat(green,num);          }
         }else if(random==1){
-          table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-
+table+=takenSeat(red,num);
           if(newLimit==0){
-            table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-          }
+table+=takenSeat(red,num);          }
         }
     }else if(num==6){
-      table+="</td>";
-      table+="<td class='nh'>";
+      table+=closeTableData();
+      table+=createTableData();
 
 
-         random=Math.floor(Math.random() * 2);
+         random=randInteger(2);
         if(random==0){
           newLimit=limit-1;
           if(newLimit==0){
-            table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-          }else{
-            table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
-          }
+table+=takenSeat(red,num);          }else{
+            table+=freeSeat(green,num);          }
         }else if(random==1){
-          table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-
+table+=takenSeat(red,num);
           if(newLimit==0){
-            table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-          }
+table+=takenSeat(red,num);          }
         }
     }else if(num==0){
-      table+="<tr>";
-      table+="<td class='nh' id='a'>"+"Sector A"+"</td>";
-      table+="<td class='nh'>";
+      table+=createSector("A");
+      table+=createTableData();
 
 
     }else{
 
 
-   random=Math.floor(Math.random() * 2);
+   random=randInteger(2);
   if(random==0){
     newLimit=limit-1;
     if(newLimit==0){
-      table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+      table+=takenSeat(red,num);
     }else{
-      table+="<p id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+green+num+"'"+"src='img/greenchairicon.png' alt='green'>"+"</p>";
+      table+=freeSeat(green,num);
     }
 
   }else if(random==1){
-    table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
-
+     table+=takenSeat(red,num);
     if(newLimit==0){
-      table+="<p  id='"+num+"'>"+"<img onClick='checkValue(this.id)' id='"+red+num+"'"+"src='img/redchairicon.png' alt='red'>"+"</p>";
+      table+=takenSeat(red,num);
     }
   }
 
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
 };
@@ -476,8 +433,6 @@ var limit;
 
 });
 }
-
-
 function countTotal(){
 
   var getValue=document.getElementById("priceCategory").value;
@@ -499,7 +454,6 @@ function countTotal(){
 
 
 }
-
 function chooseTicketOptions(){
 
   $.get( "datasource/ticket.json", function( ticket ) {
@@ -543,8 +497,6 @@ function chooseTicketOptions(){
   document.getElementById('sittingplan').innerHTML=table;
 
 }
-
-
 window.onload=function makeTable(){
   hideBilling();
   createSeats();
@@ -690,7 +642,6 @@ function showdata(id){
 
   return document.getElementById('movie').value=id;
 }
-
 function chosenDays(day){
 
   return document.getElementById('days').value=day;
@@ -698,7 +649,6 @@ function chosenDays(day){
 function chosenTime(time){
   return document.getElementById('time').value=time;
 }
-
 function chosenProjections(movie,day,time){
   alert("You have chosen:"+movie+"on"+day+" "+time);
 }
