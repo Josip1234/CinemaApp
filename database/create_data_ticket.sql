@@ -1,0 +1,1 @@
+INSERT INTO `ticket` (`id`, `option_t`) VALUES (NULL, '{\r\n \"tickets\":[\r\n {\"option\":\"Children 5-10 years\"},\r\n {\"option\":\"Children 10-14 years\"},\r\n {\"option\":\"Young adult 14-18 years\"},\r\n {\"option\":\"Regular student 19-25 years\"},\r\n {\"option\":\"Adult\"}\r\n ]\r\n\r\n}\r\n')

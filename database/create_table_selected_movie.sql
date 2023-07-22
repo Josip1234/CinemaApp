@@ -1,0 +1,1 @@
+CREATE TABLE `cinemaapp`.`selected_movies` ( `id` INT NOT NULL AUTO_INCREMENT , `selected_movie` JSON NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_croatian_ci;
