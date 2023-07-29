@@ -481,6 +481,8 @@ for(var k=0;k<8;k++){
   table+="<span>Sold:<span id='sold' class='info6'>"+''+"</span></span>";
   table+="</td>";
 
+
+
 table+="<td>";
 for(var data=0;data<20;data++){
   if(data==3){

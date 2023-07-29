@@ -100,13 +100,16 @@
     </div>
     </div>
     <div class="row">
+      <section id="selected"> <input type="radio" name="selected" id="selected"> Selected </section>";
       <div class="col">
         <section id="section2">
 
            <section id="sittingplan">
+            
            </section>
            <section id="seats">
 
+          
            </section>
            <section id="form2">
              <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
