@@ -1,1 +1,0 @@
-INSERT INTO `selected_movies` (`id`, `selected_movie`) VALUES (NULL, '{\"movie\":\"Angel has fallen\",\"days\":\"Monday,12.8.2019.\",\"time\":\"20:00\"}');

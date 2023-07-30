@@ -1,1 +1,0 @@
-INSERT INTO `ticket_detail` (`id`, `ticketdetails`) VALUES (NULL, '{\"ticketcategory\":\"Children 5-10 years\",\"ticketamount\":\"5\",\"price\":\"40.65\",\"discount\":0.75,\"total\":\"203.25\",\"seatNo\":\"1\",\"sector1\":\"Sector A\",\"sector2\":\"Sector X\"}')
